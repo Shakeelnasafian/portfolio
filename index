@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Shakeel Ahmad</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Resume Shakeel Ahmad">
+	<meta name="author" content="Shakeel Ahmad">
+	<!-- Google Fonts -->
+	<link href="css.css" rel="stylesheet">
+	<!-- FontAwesome JS -->
+	<script defer="" src="all.js"></script>
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="theme-1.css">
+</head>
+<body>
+
+	<div class="main-wrapper">
+		<div class="container resume-container px-3 px-lg-5">
+			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+
+				<div class="resume-header">
+					<div class="row align-items-center">
+						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
+							<h2 class="resume-name mb-0 text-uppercase">Shakeel Ahmad</h2>
+							<div class="resume-tagline mb-3 mb-md-0">Software Engineer</div>
+						</div><!--//resume-title-->
+						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
+							<ul class="list-unstyled mb-0">
+								<li class="mb-2"><svg class="svg-inline--fa fa-square-phone fa-fw fa-lg me-2"
+										aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-phone"
+										role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+										data-fa-i2svg="">
+										<path fill="currentColor"
+											d="M384 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h320c35.35 0 64-28.65 64-64V96C448 60.65 419.3 32 384 32zM351.6 321.5l-11.62 50.39c-1.633 7.125-7.9 12.11-15.24 12.11c-126.1 0-228.7-102.6-228.7-228.8c0-7.328 4.984-13.59 12.11-15.22l50.38-11.63c7.344-1.703 14.88 2.109 17.93 9.062l23.27 54.28c2.719 6.391 .8828 13.83-4.492 18.22L168.3 232c16.99 34.61 45.14 62.75 79.77 79.75l22.02-26.91c4.344-5.391 11.85-7.25 18.24-4.484l54.24 23.25C349.5 306.6 353.3 314.2 351.6 321.5z">
+										</path>
+									</svg><!-- <i class="fas fa-phone-square fa-fw fa-lg me-2 "></i> Font Awesome fontawesome.com --><a
+										class="resume-link" href="tel:#">+971 50 84 16 653</a></li>
+								<li class="mb-2"><svg class="svg-inline--fa fa-square-envelope fa-fw fa-lg me-2"
+										aria-hidden="true" focusable="false" data-prefix="fas"
+										data-icon="square-envelope" role="img" xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 448 512" data-fa-i2svg="">
+										<path fill="currentColor"
+											d="M384 32H64C28.63 32 0 60.63 0 96v320c0 35.38 28.62 64 64 64h320c35.38 0 64-28.62 64-64V96C448 60.63 419.4 32 384 32zM384 336c0 17.67-14.33 32-32 32H96c-17.67 0-32-14.33-32-32V225.9l138.5 69.27C209.3 298.5 216.6 300.2 224 300.2s14.75-1.688 21.47-5.047L384 225.9V336zM384 190.1l-152.8 76.42c-4.5 2.25-9.812 2.25-14.31 0L64 190.1V176c0-17.67 14.33-32 32-32h256c17.67 0 32 14.33 32 32V190.1z">
+										</path>
+									</svg><a class="resume-link" href="mailto:#">shakeel.mumtaz@outlook.com</a>
+								</li>
+								<!-- <li class="mb-2"><svg class="svg-inline--fa fa-globe fa-fw fa-lg me-2"
+										aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe"
+										role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+										data-fa-i2svg="">
+										<path fill="currentColor"
+											d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z">
+										</path>
+									</svg>
+									<a class="resume-link" href="">www.yourwebsite.com</a>
+								</li> -->
+								<li class="mb-0"><svg class="svg-inline--fa fa-location-dot fa-fw fa-lg me-2"
+										aria-hidden="true" focusable="false" data-prefix="fas" data-icon="location-dot"
+										role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+										data-fa-i2svg="">
+										<path fill="currentColor"
+											d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z">
+										</path>
+									</svg>Dubai</li>
+							</ul>
+						</div><!--//resume-contact-->
+					</div><!--//row-->
+
+				</div><!--//resume-header-->
+				<hr>
+				<div class="resume-intro py-3">
+					<div class="row align-items-center">
+
+						<div class="col text-start">
+							<p class="mb-0">I am an experienced software engineer with a BS in Software Engineering and
+								over 4 years of expertise. My skills encompass PHP, JavaScript (Vue.js), HTML, and CSS,
+								with proficiency in PHP CMS (WordPress), Laravel, Codeigniter, Shopify, AWS (Lightsail,
+								EC2, RDS), and MySQL. I have a proven track record of building applications of varying
+								scales.</p>
+						</div><!--//col-->
+					</div>
+				</div><!--//resume-intro-->
+				<hr>
+				<div class="resume-body">
+					<div class="row">
+						<div class="resume-main col-12 col-lg-8 col-xl-9   pe-0   pe-lg-5">
+							<section class="work-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Work Experiences</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Lead Software
+											Engineer</h4>
+										<div
+											class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">
+											<a href="https://www.agbl.net/" target="_blank">Alliance Global</a> | 2022 - Present
+										</div>
+
+									</div>
+									<div class="item-content">
+										<p>
+											Experienced Lead Software Engineer with expertise in PHP, WordPress, and
+											e-commerce solutions. Skilled in custom CMS development, REST API
+											integration, and team management for timely project delivery. Proficient in
+											Laravel framework and system optimization, delivering high-quality solutions
+											to meet business objectives.</p>
+										<ul class="resume-list">
+											<li>Web Development: Proficient in PHP website development, including
+												customizing WordPress themes and plugins, and building e-commerce
+												websites using Shopify and WordPress.</li>
+											<li>Custom CMS Development: Skilled in creating custom content management
+												systems using CodeIgniter, streamlining content management processes.
+											</li>
+											<li>Performance Optimization: Successful track record in optimizing
+												WordPress sites for speed and performance, enhancing user experience and
+												search engine rankings.</li>
+											<li>Team Leadership: Experience in leading and managing teams, overseeing
+												technical aspects of projects, and ensuring timely project delivery.
+											</li>
+											<li>API Integration: Proficient in implementing REST APIs and integrating
+												third-party services like Lightsail, Azure, and Netsuite, expanding the
+												functionality of web applications.</li>
+											<li>Laravel Framework: Capable of developing systems using the Laravel
+												framework, leveraging its features for building robust and scalable
+												applications.</li>
+											<li>System Optimization: Experienced in conducting system optimization and
+												query optimizations to improve overall efficiency and reduce load times.
+											</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior PHP
+											Developer</h4>
+										<div
+											class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">
+											<a href="https://icrowdnewswire.com/" target="_blank">Icrowdnewswire</a> | 2019 - 2021
+										</div>
+
+									</div>
+									<div class="item-content">
+										<p>
+											Pixako (icrowdnewswire) is a technology company based in Islamabad,
+											specializing in PHP-based web development, custom CMS using CodeIgniter, and
+											optimized WordPress solutions. They emphasize website performance with AWS
+											technologies, delivering innovative and client-satisfying projects led by
+											experienced professionals.</p>
+										<ul class="resume-list">
+											<li>Led a team of 7 members, providing technical guidance and overseeing
+												project execution.</li>
+											<li>Developed PHP websites, customized WordPress themes and plugins, and
+												implemented a custom CMS using CodeIgniter.</li>
+											<li>Performance Optimization: Successful track record in optimizing
+												WordPress sites for speed and performance, enhancing user experience and
+												search engine rankings.</li>
+											<li>Team Leadership: Experience in leading and managing teams, overseeing
+												technical aspects of projects, and ensuring timely project delivery.
+											</li>
+											<li>API Integration: Proficient in implementing REST APIs and integrating
+												third-party services like Lightsail, Azure, and Netsuite, expanding the
+												functionality of web applications.</li>
+											<li>Optimized WordPress sites, significantly improving speed and performance
+												for enhanced user experience.</li>
+											<li>Implemented REST APIs to facilitate data exchange between applications.
+											</li>
+											<li>Utilized AWS Cloud Servers, S3 Buckets, and EC2 instances for efficient
+												system deployment.</li>
+											<li>Conducted system optimization and query optimizations, resulting in
+												improved performance.</li>
+											<li>Collaborated with cross-functional teams during the development
+												lifecycle to ensure seamless integration of software components.</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Junior Wordpress
+											Developer</h4>
+										<div
+											class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">
+											<a href="https://allmarketingsolutions.co.uk/" target="_blank">All Marketing Solutions</a> | 2018 - 2019
+										</div>
+
+									</div>
+									<div class="item-content">
+										<p>As a skilled professional, I contributed to PHP web development projects and successfully customized plugins for WordPress. Additionally, I applied SEO techniques to enhance website visibility and performance. My proficiency includes working with MySQL/MySQLi and SQL Server, allowing me to deliver efficient database solutions.</p>
+										<ul class="resume-list">
+											<li>PHP web development.</li>
+											<li>Customization of plugins for WordPress.</li>
+											<li>Implementation of SEO techniques for improved website visibility and performance.</li>
+											<li>Proficiency in working with MySQL/MySQLi and SQL Server for efficient database management and integration.</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+							
+
+							</section><!--//work-section-->
+
+
+							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Abiomix
+										</h4><div
+										class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">
+										<a href="https://abiomix.com/" target="_blank">Link</a></div>
+									</div>
+									<div class="item-content">
+										<p>I have developed a system where physicians can upload their samples, and we perform the analysis of the samples using bioinformatics scripts to provide results to the users. This system is designed for the analysis of both COVID-19 and other generic diseases. It consists of two parts: Geneius and Decov. </p>
+
+
+											 <p>In Geneius, users can input text, and the system automatically checks for disease-related HPO terms, making it easier for the system to analyze the sample and provide comprehensive details. This feature helps general counselors to better understand the samples.
+										</p>
+									</div>
+								</div><!--//item-->
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Icrowdnewswire
+										</h4><div
+										class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">
+										<a href="https://icrowdnewswire.com/" target="_blank">Link</a></div>
+									</div>
+									<div class="item-content">
+										<p>During this project, I successfully developed and maintained icrowdnewswire, a cutting-edge website that offers advanced content syndication and amplification services for press releases, powered by state-of-the-art AI technologies. I utilized WordPress and CodeIgniter 3 to build a robust and user-friendly platform, complemented by APIs for efficient data handling and distribution through RSS feeds. </p><p> Bots were implemented to ensure seamless data reception and report generation, enabling widespread dissemination of icrowdnewswire content on major platforms like Google News and Apple News. Additionally, managing the newsroom section allowed for engaging press releases showcasing the company's achievements, innovations, and offers, contributing to the project's overall success and marking a significant milestone in my career as a developer.</p>
+									</div>
+								</div><!--//item-->
+								<div class="item">
+									<h3 class="text-uppercase resume-section-heading mb-4">Other Projects</h3>
+								</div><!--//item-->
+								<div class="item">
+									<ul>
+										<li><a href="https://nexisnewswire.lexisnexis.com/auth/login" target="_blank">Nexis Newswire (Lexisnexis + Icrowdnewswire )</a></li>
+										<li><a href="https://account.icrowdnewswire.com/auth/login" target="_blank">Dashboard Icrowdnewswire</a></li>
+										<li><a href="https://www.law.com/legalnewswire/" target="_blank">Lega Newswire ( Law.com + Icrowdnewswire )</a></li>
+										<li><a href="https://icrowdnewswire.com/report/?id=2692692" target="_blank">Icrowdnewswire Reporting</a></li>
+										<li><a href="https://pressrelease.icrowdnewswire.com/" target="_blank">Press Release</a></li>
+										<li><a href="https://management.icrowdnewswire.com/users/login" target="_blank">Icrowdnewswire Management Dashboard</a></li>
+										<li><a href="https://editorial.icrowdnewswire.com/users/login" target="_blank">Editorial System Icrowdnewswire</a></li>
+										<li><a href="https://icrowdmarketing.com/" target="_blank">Icrowdmarketing</a></li>
+										<li><a href="https://icrowdresearch.com/" target="_blank">Icrowdresearch</a></li>
+										<li><a href="https://www.icrowdde.com/" target="_blank">Icrowdde.com ( 8 other language sites )</a></li>
+										<li><a href="https://canadatousd.com/" target="_blank">Canadatousd</a></li>
+										<li><a href="https://reportedtimes.com/" target="_blank">Reportedtimes</a></li>
+										<li><a href="https://heymuse.com/" target="_blank">Heymuse</a></li>
+										<li><a href="https://neuroaffectivetouch.com/" target="_blank">Neuroaffectivetouch</a></li>
+										<li><a href="https://www.thinkculinary.com/" target="_blank">thinkculinary</a></li>
+										<li><a href="https://www.prestonestateplanning.com/" target="_blank">prestonestateplanning</a></li>
+										<li><a href="https://agiomix.com/" target="_blank">Agiomix</a></li>
+										<li><a href="https://livewellgx.com/" target="_blank">Livewellgx</a></li>
+										<li><a href="https://www.agbl.net/" target="_blank">Agbl</a></li>
+										<li><a href="https://timepiece360.com/" target="_blank">Timepiece360</a></li>
+										<li><a href="https://tplabs.ae/" target="_blank">Tplabs</a></li>
+										<li><a href="https://phcx.health/" target="_blank">Phcx.health</a></li>
+										<li><a href="https://estore.phcx.health/" target="_blank">Estore.phcx.health</a></li>
+										<li><a href="https://dashboard.agiomix.com/" target="_blank">Agiomix Dashboard</a></li>
+										<li><a href="https://avcna.net/" target="_blank">Avcna</a></li>
+										<li><a href="https://counselomix.com/" target="_blank">Counselomix</a></li>
+										<li><a href="https://niptunegx.com/" target="_blank">Niptunegx</a></li>
+										<li><a href="https://canactgx.com/" target="_blank">Canactgx</a></li>
+										<li><a href="https://pgtunegx.com/" target="_blank">Pgtunegx</a></li>
+										<li><a href="https://reporting.agiomix.com/auth/login" target="_blank">Agiomix Reporting</a></li>
+	
+									</ul>
+								</div><!--//item-->
+							</section><!--//project-section-->
+						</div><!--//resume-main-->
+						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+							<section class="skills-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
+								<div class="item">
+									<h4 class="item-title">Technical</h4>
+									<ul class="list-unstyled resume-skills-list">
+										<ul>
+												<li class="mb-2">PHP</li>
+												<li class="mb-2">CodeIgniter, Laravel, Vue.js</li>
+												<li class="mb-2">AWS Cloud Servers, S3 Buckets, EC2, Lightsail</li>
+												<li class="mb-2">Git, Bitbucket, GitHub, GitLab</li>
+												<li class="mb-2">HTML5, CSS3, jQuery, Bootstrap</li>
+												<li class="mb-2">MySQL/MySQLi, SQL Server, Amazon RDS</li>
+												<li class="mb-2">WordPress Development / Customization</li>
+												<li class="mb-2">Shopify</li>
+												<li class="mb-2">REST API Development</li>
+												<li class="mb-2">SEO Techniques</li>
+												<li class="mb-2">Object-oriented design</li>
+												<li class="mb-2">Design and implement database structures</li>
+												<li>Lead and deliver complex software systems</li>
+									</ul>
+								</div><!--//item-->
+								<div class="item">
+									<h4 class="item-title">Professional</h4>
+									<ul class="list-unstyled resume-skills-list">
+										<li class="mb-2">Effective communication</li>
+										<li class="mb-2">Team player</li>
+										<li class="mb-2">Strong problem solver</li>
+										<li>Good time management</li>
+									</ul>
+								</div><!--//item-->
+							</section><!--//skills-section-->
+							<section class="education-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
+								<ul class="list-unstyled resume-education-list">
+									<li class="mb-3">
+										<div class="resume-degree font-weight-bold">BS Software Engineering</div>
+										<div class="resume-degree-org text-muted">University of Malakand</div>
+										<div class="resume-degree-time text-muted">2014 - 2018</div>
+									</li>
+									<li>
+										<div class="resume-degree font-weight-bold">FSC Free Engineering</div>
+										<div class="resume-degree-org text-muted">Muslim Educational Complex</div>
+										<div class="resume-degree-time text-muted">2011 - 2013</div>
+									</li>
+								</ul>
+							</section><!--//education-section-->
+							<!-- 
+							<section class="education-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Awards</h3>
+								<ul class="list-unstyled resume-awards-list">
+									<li class="mb-3">
+										<div class="font-weight-bold">Award Lorem Ipsum</div>
+										<div class="text-muted">Microsoft lorem ipsum (2019)</div>
+									</li>
+									<li>
+										<div class="font-weight-bold">Award Donec Sodales</div>
+										<div class="text-muted">Oracle Aenean (2017)</div>
+									</li>
+								</ul> -->
+							<!-- </section>//education-section-->
+
+							<section class="skills-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
+								<ul class="list-unstyled resume-lang-list">
+									<li class="mb-2">English <span class="text-muted">(Professional)</span></li>
+									<li>Urdu <span class="text-muted">(Professional)</span></li>
+								</ul>
+							</section><!--//certificates-section-->
+							<section class="skills-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
+								<ul class="list-unstyled resume-interests-list mb-0">
+									<li class="mb-2">Climbing</li>
+									<li class="mb-2">Driving</li>
+									<li class="mb-2">Cricket</li>
+									<li>Travelling</li>
+								</ul>
+							</section><!--//certificates-section-->
+
+						</aside><!--//resume-aside-->
+					</div><!--//row-->
+				</div><!--//resume-body-->
+				<hr>
+				<div class="resume-footer text-center">
+					<ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
+						<li class="list-inline-item mb-lg-0 me-3"><a class="resume-link"
+								href="https://themes.3rdwavemedia.com/devcard/bs5/2.0/resume.html#"><svg
+									class="svg-inline--fa fa-github-square fa-2x me-2" data-fa-transform="down-4"
+									aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github-square"
+									role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""
+									style="transform-origin: 0.4375em 0.75em;">
+									<g transform="translate(224 256)">
+										<g transform="translate(0, 128)  scale(1, 1)  rotate(0 0 0)">
+											<path fill="currentColor"
+												d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4 .2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9 .2 36.5 .2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9 .4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7 .6 3.9 1.9 .3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2 .2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7 .9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2 .4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8 .9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1 .9-1.1 2.8-.9 4.3 .6 1.3 1.3 1.8 3.3 .9 4.1zm-9.1-9.1c-.9 .6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9 .9-2.4 .4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5 .9-.9 2.4-.4 3.5 .6 1.1 1.3 1.3 2.8 .4 3.5zm-6.7-7.4c-.4 .9-1.7 1.1-2.8 .4-1.3-.6-1.9-1.7-1.5-2.6 .4-.6 1.5-.9 2.8-.4 1.3 .7 1.9 1.8 1.5 2.6z"
+												transform="translate(-224 -256)"></path>
+										</g>
+									</g>
+								</svg><!-- <i class="fab fa-github-square fa-2x me-2" data-fa-transform="down-4"></i> Font Awesome fontawesome.com --><span
+									class="d-none d-lg-inline-block text-muted">github.com/username</span></a></li>
+						<li class="list-inline-item mb-lg-0 me-3"><a class="resume-link"
+								href="https://themes.3rdwavemedia.com/devcard/bs5/2.0/resume.html#"><svg
+									class="svg-inline--fa fa-linkedin fa-2x me-2" data-fa-transform="down-4"
+									aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin"
+									role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""
+									style="transform-origin: 0.4375em 0.75em;">
+									<g transform="translate(224 256)">
+										<g transform="translate(0, 128)  scale(1, 1)  rotate(0 0 0)">
+											<path fill="currentColor"
+												d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+												transform="translate(-224 -256)"></path>
+										</g>
+									</g>
+								</svg><!-- <i class="fab fa-linkedin fa-2x me-2" data-fa-transform="down-4"></i> Font Awesome fontawesome.com --><span
+									class="d-none d-lg-inline-block text-muted">linkedin.com/in/username</span></a></li>
+						<li class="list-inline-item mb-lg-0 me-lg-3"><a class="resume-link"
+								href="https://themes.3rdwavemedia.com/devcard/bs5/2.0/resume.html#"><svg
+									class="svg-inline--fa fa-twitter-square fa-2x me-2" data-fa-transform="down-4"
+									aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter-square"
+									role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""
+									style="transform-origin: 0.4375em 0.75em;">
+									<g transform="translate(224 256)">
+										<g transform="translate(0, 128)  scale(1, 1)  rotate(0 0 0)">
+											<path fill="currentColor"
+												d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8 .2 5.7 .2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3 .6 10.4 .8 15.8 .8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.45 65.45 0 0 1 -29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"
+												transform="translate(-224 -256)"></path>
+										</g>
+									</g>
+								</svg><!-- <i class="fab fa-twitter-square fa-2x me-2" data-fa-transform="down-4"></i> Font Awesome fontawesome.com --><span
+									class="d-none d-lg-inline-block text-muted">@twittername</span></a></li>
+					</ul>
+				</div><!--//resume-footer-->
+			</article>
+
+		</div><!--//container-->
+
+		<footer class="footer text-center py-4">
+			<small class="copyright"></small>
+		</footer>
+
+	</div><!--//main-wrapper-->
+
+</body>
+
+</html>
