@@ -26,7 +26,7 @@
 					<div class="row align-items-center">
 						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
 							<h2 class="resume-name mb-0 text-uppercase">Shakeel Ahmad</h2>
-							<div class="resume-tagline mb-3 mb-md-0">Software Engineer</div>
+							<div class="resume-tagline mb-3 mb-md-0">Lead Full Stack Developer</div>
 						</div><!--//resume-title-->
 						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
 							<ul class="list-unstyled mb-0">
@@ -46,7 +46,7 @@
 										<path fill="currentColor"
 											d="M384 32H64C28.63 32 0 60.63 0 96v320c0 35.38 28.62 64 64 64h320c35.38 0 64-28.62 64-64V96C448 60.63 419.4 32 384 32zM384 336c0 17.67-14.33 32-32 32H96c-17.67 0-32-14.33-32-32V225.9l138.5 69.27C209.3 298.5 216.6 300.2 224 300.2s14.75-1.688 21.47-5.047L384 225.9V336zM384 190.1l-152.8 76.42c-4.5 2.25-9.812 2.25-14.31 0L64 190.1V176c0-17.67 14.33-32 32-32h256c17.67 0 32 14.33 32 32V190.1z">
 										</path>
-									</svg><a class="resume-link" href="mailto:#">shakeel.mumtaz@outlook.com</a>
+									</svg><a class="resume-link" href="mailto:#">shakeelnasafian@gmail.com</a>
 								</li>
 								<!-- <li class="mb-2"><svg class="svg-inline--fa fa-globe fa-fw fa-lg me-2"
 										aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe"
@@ -76,11 +76,13 @@
 					<div class="row align-items-center">
 
 						<div class="col text-start">
-							<p class="mb-0">I am an experienced software engineer with a BS in Software Engineering and
-								over 4 years of expertise. My skills encompass PHP, JavaScript (Vue.js), HTML, and CSS,
-								with proficiency in PHP CMS (WordPress), Laravel, Codeigniter, Shopify, AWS (Lightsail,
-								EC2, RDS), and MySQL. I have a proven track record of building applications of varying
-								scales.</p>
+							<p class="mb-0">Results-driven Full Stack Developer with 6+ years of experience designing and developing scalable web applications.
+								Proficient in PHP (Laravel, CodeIgniter, WordPress), Vue.js, AWS, with expertise in system architecture, automation, and full-cycle project management.
+								Skilled in leading development teams, implementing Agile & Scrum methodologies, and optimizing workflows for high-performance applications.
+								Experienced in Shopify and WooCommerce development, building and integrating custom e-commerce solutions.
+								Strong background in SSO, OAuth 2.0, RESTful APIs, and third-party integrations.
+								
+								Passionate about leadership, mentoring teams, and delivering high-quality, maintainable software solutions that drive business success.</p>
 						</div><!--//col-->
 					</div>
 				</div><!--//resume-intro-->
