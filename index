@@ -108,11 +108,13 @@
 											e-commerce solutions. Skilled in custom CMS development, REST API
 											integration, and team management for timely project delivery. Proficient in
 											Laravel framework and system optimization, delivering high-quality solutions
-											to meet business objectives.</p>
+											to meet business objectives.
+										</p>
 										<ul class="resume-list">
 											<li>Web Development: Proficient in PHP website development, including
 												customizing WordPress themes and plugins, and building e-commerce
-												websites using Shopify and WordPress.</li>
+												websites using Shopify and WordPress.
+											</li>
 											<li>Custom CMS Development: Skilled in creating custom content management
 												systems using CodeIgniter, streamlining content management processes.
 											</li>
@@ -150,31 +152,40 @@
 											specializing in PHP-based web development, custom CMS using CodeIgniter, and
 											optimized WordPress solutions. They emphasize website performance with AWS
 											technologies, delivering innovative and client-satisfying projects led by
-											experienced professionals.</p>
+											experienced professionals.
+										</p>
 										<ul class="resume-list">
 											<li>Led a team of 7 members, providing technical guidance and overseeing
-												project execution.</li>
+												project execution.
+											</li>
 											<li>Developed PHP websites, customized WordPress themes and plugins, and
-												implemented a custom CMS using CodeIgniter.</li>
+												implemented a custom CMS using CodeIgniter.
+											</li>
 											<li>Performance Optimization: Successful track record in optimizing
 												WordPress sites for speed and performance, enhancing user experience and
-												search engine rankings.</li>
+												search engine rankings.
+											</li>
 											<li>Team Leadership: Experience in leading and managing teams, overseeing
 												technical aspects of projects, and ensuring timely project delivery.
 											</li>
 											<li>API Integration: Proficient in implementing REST APIs and integrating
 												third-party services like Lightsail, Azure, and Netsuite, expanding the
-												functionality of web applications.</li>
+												functionality of web applications.
+											</li>
 											<li>Optimized WordPress sites, significantly improving speed and performance
-												for enhanced user experience.</li>
+												for enhanced user experience.
+											</li>
 											<li>Implemented REST APIs to facilitate data exchange between applications.
 											</li>
 											<li>Utilized AWS Cloud Servers, S3 Buckets, and EC2 instances for efficient
-												system deployment.</li>
+												system deployment.
+											</li>
 											<li>Conducted system optimization and query optimizations, resulting in
-												improved performance.</li>
+												improved performance.
+											</li>
 											<li>Collaborated with cross-functional teams during the development
-												lifecycle to ensure seamless integration of software components.</li>
+												lifecycle to ensure seamless integration of software components.
+											</li>
 										</ul>
 									</div>
 								</div><!--//item-->
@@ -214,9 +225,7 @@
 									</div>
 									<div class="item-content">
 										<p>I have developed a system where physicians can upload their samples, and we perform the analysis of the samples using bioinformatics scripts to provide results to the users. This system is designed for the analysis of both COVID-19 and other generic diseases. It consists of two parts: Geneius and Decov. </p>
-
-
-											 <p>In Geneius, users can input text, and the system automatically checks for disease-related HPO terms, making it easier for the system to analyze the sample and provide comprehensive details. This feature helps general counselors to better understand the samples.
+										<p>In Geneius, users can input text, and the system automatically checks for disease-related HPO terms, making it easier for the system to analyze the sample and provide comprehensive details. This feature helps general counselors to better understand the samples.
 										</p>
 									</div>
 								</div><!--//item-->
