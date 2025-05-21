@@ -1,222 +1,71 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700");
-
-html,
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-}
-
-.header {
-  padding: 40px 50px;
-}
-
-@media only screen and (max-width: 650px) {
-  .header {
-    padding: 40px 20px;
-  }
-}
-
-.body {
-  zoom: 1;
-  padding-top: 109px;
-}
-
-@media only screen and (max-width: 650px) {
-  .body {
-    padding: 0px;
-  }
-}
-
-.body:before,
-.body:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-
-.body:after {
-  clear: both;
-}
-
-.body>.-info-text {
-  float: left;
-  display: block;
-  width: 50%;
-}
-
-@media only screen and (max-width: 650px) {
-  .body>.-info-text {
-    width: 100%;
-  }
-}
-
-.body>.-info-text>.-inner-wrp {
-  width: 60%;
-  display: block;
-  margin: 0 auto;
-}
-
-@media only screen and (max-width: 650px) {
-  .body>.-info-text>.-inner-wrp {
-    width: 90%;
-    padding-left: 20px;
-    margin: 0;
-  }
-}
-
-.body>.-info-text>.-inner-wrp>.-pre-headline {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-  line-height: 36px;
-  display: flex;
-  align-items: center;
-  color: #282a35;
-}
-
-.body>.-info-text>.-inner-wrp>.-headline {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 44px;
-  display: flex;
-  align-items: center;
-  color: #282a35;
-}
-
-.body>.-info-text>.-inner-wrp>.-post-headline,
-.body>.-info-text>.-inner-wrp>.-details {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  color: #152536;
-  opacity: 0.7;
-}
-
-.body>.-info-text>.-inner-wrp>.-post-headline>.-homepage-link {
-  color: #152536 !important;
-}
-
-.-helpful-links-header {
-  margin-top: 20px;
-}
-
-.-helpful-links-header ul {
-  padding-left: 25px;
-}
-
-.-helpful-links-header-text {
-  font-weight: 600;
-}
-
-.-helpful-link-item {
-  color: #152536 !important;
-}
-
-.body>.-info-text>.-inner-wrp>.-details {
-  font-weight: bold;
-  opacity: 1;
-  padding-top: 20px;
-}
-
-.body>.-img-wrp {
-  float: left;
-  display: block;
-  width: 50%;
-}
-
-@media only screen and (max-width: 650px) {
-  body .body>.-img-wrp {
-    display: none;
-  }
-}
-
-.body>.-img-wrp>.-circle {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  width: 312px;
-  height: 312px;
-  background-color: #d6eee2;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-
-.body>.-img-wrp>.-circle>.-smile-icon {
-  width: 148px;
-  height: 217px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -108.5px;
-  margin-left: -74px;
+:root {
+  --primary-color: #0563bb;
+  --secondary-color: #6c757d;
+  --dark-color: #343a40;
+  --text-color: #444;
+  --light-color: #f8f9fa;
+  --border-color: #dee2e6;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #f4f7fa;
-  margin: 0;
-  padding: 0;
-  color: #333;
+  color: var(--text-color);
+  background-color: #f5f5f5;
+  line-height: 1.6;
 }
 
-.resume-wrapper {
+.resume-container {
+  max-width: 1200px;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
-.resume-header h2 {
-  font-size: 2.2rem;
-  color: #0d6efd;
+.resume-name {
   font-weight: 700;
+  color: var(--primary-color);
 }
 
 .resume-tagline {
-  font-size: 1.2rem;
-  color: #6c757d;
   font-weight: 500;
+  font-size: 1.25rem;
 }
 
 .resume-section-heading {
-  font-size: 1.4rem;
-  color: #212529;
-  border-bottom: 2px solid #0d6efd;
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 5px;
-  margin-bottom: 20px;
   font-weight: 600;
+  color: var(--primary-color);
 }
 
 .item-title {
   font-weight: 600;
-  color: #0d6efd;
+  color: var(--dark-color);
 }
 
 .item-meta {
-  color: #6c757d;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  text-align: right;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
 }
 
-.item-content p {
-  margin-bottom: 10px;
-  line-height: 1.6;
-  text-align: justify;
+.resume-list li {
+  margin-bottom: 0.5rem;
+}
+
+.resume-contact li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.resume-contact li i {
+  margin-right: 10px;
+  color: var(--primary-color);
 }
 
 .resume-link {
-  color: #0d6efd;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -224,31 +73,77 @@ body {
   text-decoration: underline;
 }
 
-.resume-list li,
-ul li {
-  margin-bottom: 8px;
-  line-height: 1.6;
-  list-style: disc;
-  margin-left: 1.5rem;
+.badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
 }
 
-.resume-footer a {
-  color: #0d6efd;
+.achievement-list li {
+  margin-bottom: 0.75rem;
+}
+
+.project-link {
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
 }
 
-.resume-footer a:hover {
+.skill-badge {
+  display: inline-block;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin: 0 5px 8px 0;
+  font-size: 0.85rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Add to your existing CSS */
+.project-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+.project-links a:hover {
+  color: #044d9e;
   text-decoration: underline;
 }
 
-ul.list-inline li {
-  margin: 0 10px;
+.card {
+  transition: all 0.3s ease;
 }
 
-.item-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
 }
