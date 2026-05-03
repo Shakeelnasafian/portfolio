@@ -5,99 +5,261 @@
   <meta charset="UTF-8">
   <title>Shakeel Ahmad — Full Stack Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shakeel Ahmad — Full Stack Developer with 8+ years in PHP, Laravel, Vue.js, React, AWS, Docker. Based in Dubai, UAE.">
+  <meta name="description"
+    content="Shakeel Ahmad — Lead Full Stack Developer with 8+ years in PHP, Laravel, Vue.js, React, AWS, Docker. Based in Dubai, UAE.">
   <meta name="author" content="Shakeel Ahmad">
-  <link id="theme-style" rel="stylesheet" href="theme-1.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="css.css" rel="stylesheet">
-  <script defer src="all.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Sora', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            ink: {
+              0: '#07070d',
+              1: '#0c0c17',
+              2: '#11111f',
+              3: '#161628',
+            },
+            brand: {
+              violet: '#7c5cff',
+              cyan:   '#38bdf8',
+              pink:   '#f472b6',
+            },
+          },
+          animation: {
+            'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+            'aurora':     'aurora 18s ease-in-out infinite alternate',
+            'shine':      'shine 6s ease-in-out infinite alternate',
+            'bob':        'bob 2.4s ease-in-out infinite',
+            'spin-slow':  'spin 24s linear infinite',
+          },
+          keyframes: {
+            pulseSoft: {
+              '0%, 100%': { boxShadow: '0 0 0 0 rgba(74, 222, 128, .55)' },
+              '50%':      { boxShadow: '0 0 0 6px rgba(74, 222, 128, 0)' },
+            },
+            aurora: {
+              '0%':   { transform: 'translate(0, 0) rotate(0deg)',  opacity: '.85' },
+              '50%':  { transform: 'translate(2%, -3%) rotate(8deg)', opacity: '1' },
+              '100%': { transform: 'translate(-2%, 2%) rotate(-6deg)', opacity: '.9' },
+            },
+            shine: {
+              from: { backgroundPosition: '0% 50%' },
+              to:   { backgroundPosition: '100% 50%' },
+            },
+            bob: {
+              '0%, 100%': { transform: 'translate(-50%, 0)', opacity: '.7' },
+              '50%':      { transform: 'translate(-50%, 6px)', opacity: '1' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #07070d; color: #e9eaf3; -webkit-font-smoothing: antialiased; }
+    ::selection { background: rgba(139, 109, 255, .35); color: #fff; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #07070d; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #7c5cff, #38bdf8); border-radius: 10px; border: 2px solid #07070d; }
+
+    /* Gradient text helper */
+    .text-grad { background: linear-gradient(135deg, #ffffff 0%, #c9c8ff 40%, #88e0ff 75%, #f9b3da 100%); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .text-grad-vc { background: linear-gradient(135deg, #7c5cff, #38bdf8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* Hero aurora layer */
+    .aurora {
+      position: absolute; inset: -20%;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(124, 92, 255, .35), transparent 45%),
+        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, .28), transparent 45%),
+        radial-gradient(circle at 60% 85%, rgba(244, 114, 182, .22), transparent 45%),
+        radial-gradient(circle at 15% 80%, rgba(99, 102, 241, .25), transparent 50%);
+      filter: blur(60px); z-index: 0;
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%);
+    }
+    .ambient-glow::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(900px 400px at 12% 0%, rgba(124, 92, 255, .12), transparent 60%),
+        radial-gradient(800px 380px at 90% 100%, rgba(56, 189, 248, .10), transparent 60%);
+    }
+
+    /* Glass card */
+    .glass { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(8px); }
+    .glass:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.14); }
+
+    /* Project icon variants */
+    .pi-healthcare{background:linear-gradient(135deg,#ef4444,#f97316);box-shadow:0 10px 26px -10px rgba(239,68,68,.55)}
+    .pi-lab       {background:linear-gradient(135deg,#06b6d4,#3b82f6);box-shadow:0 10px 26px -10px rgba(59,130,246,.55)}
+    .pi-bio       {background:linear-gradient(135deg,#10b981,#14b8a6);box-shadow:0 10px 26px -10px rgba(16,185,129,.55)}
+    .pi-digital   {background:linear-gradient(135deg,#8b5cf6,#ec4899);box-shadow:0 10px 26px -10px rgba(139,92,246,.55)}
+    .pi-lis       {background:linear-gradient(135deg,#14b8a6,#0ea5e9);box-shadow:0 10px 26px -10px rgba(20,184,166,.55)}
+    .pi-luxury    {background:linear-gradient(135deg,#f59e0b,#ef4444);box-shadow:0 10px 26px -10px rgba(245,158,11,.55)}
+    .pi-press     {background:linear-gradient(135deg,#6366f1,#ec4899);box-shadow:0 10px 26px -10px rgba(99,102,241,.55)}
+
+    /* Project card top accent */
+    .project-card { position: relative; overflow: hidden; transition: all .4s cubic-bezier(.22,1,.36,1); }
+    .project-card::before {
+      content:""; position:absolute; top:0; left:0; right:0; height:3px;
+      background: linear-gradient(90deg,#7c5cff,#38bdf8,#f472b6);
+      transform: scaleX(0); transform-origin: left; transition: transform .5s cubic-bezier(.22,1,.36,1);
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 30px 70px -25px rgba(124,92,255,.35); }
+    .project-card:hover::before { transform: scaleX(1); }
+
+    /* Timeline */
+    .tl-line {
+      position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px;
+      background: linear-gradient(180deg, rgba(124,92,255,.5) 0%, rgba(56,189,248,.5) 50%, rgba(244,114,182,.35) 100%);
+    }
+    .tl-dot {
+      position: absolute; left: -27px; top: 26px; width: 18px; height: 18px; border-radius: 9999px;
+      background: #07070d; border: 2px solid #7c5cff;
+      box-shadow: 0 0 0 4px rgba(124,92,255,.15), 0 0 20px rgba(124,92,255,.55);
+    }
+
+    /* Fade-up */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
 
-<body>
+<body class="font-sans antialiased text-slate-200 bg-ink-0 overflow-x-hidden">
 
   <!-- ── NAV ── -->
-  <nav class="topnav" id="topnav">
-    <div class="nav-inner">
-      <span class="nav-brand">SA</span>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#more-projects">More</a></li>
-        <li><a href="mailto:shakeelnasafian@gmail.com" class="nav-cta">Hire Me</a></li>
+  <nav id="topnav"
+    class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[1100px] z-[100] rounded-full px-4 py-2.5 border border-white/[.07] backdrop-blur-xl bg-[rgba(10,10,18,0.55)] transition-all duration-300">
+    <div class="flex items-center justify-between gap-4">
+      <span class="font-display font-extrabold text-[1.05rem] tracking-wider text-grad-vc pl-1.5">SA</span>
+      <ul class="flex items-center gap-1">
+        <li class="hidden md:block"><a href="#about"       class="block px-3.5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition">About</a></li>
+        <li class="hidden md:block"><a href="#experience"  class="block px-3.5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition">Experience</a></li>
+        <li class="hidden md:block"><a href="#skills"      class="block px-3.5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition">Skills</a></li>
+        <li class="hidden md:block"><a href="#projects"    class="block px-3.5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition">Projects</a></li>
+        <li class="hidden md:block"><a href="#more-projects" class="block px-3.5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition">More</a></li>
+        <li>
+          <a href="mailto:shakeelnasafian@gmail.com"
+            class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-br from-brand-violet to-brand-cyan shadow-[0_8px_24px_-10px_rgba(124,92,255,.65)] hover:brightness-110 hover:-translate-y-0.5 transition">
+            Hire Me
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
   <!-- ── HERO ── -->
-  <header class="hero" id="about">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Available for Opportunities</div>
-      <h1 class="hero-name">Shakeel Ahmad</h1>
-      <p class="hero-role">Full Stack Developer</p>
-      <p class="hero-tagline">
+  <header id="about" class="relative min-h-screen flex items-center justify-center text-center px-6 pt-36 pb-24 isolate overflow-hidden">
+    <div class="aurora animate-aurora -z-20"></div>
+    <div class="absolute inset-0 grid-bg -z-10"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <!-- Profile photo with gradient ring -->
+      <div class="mx-auto mb-8 w-36 h-36 sm:w-40 sm:h-40 relative group">
+        <div class="absolute -inset-1 rounded-full bg-gradient-to-br from-brand-violet via-brand-cyan to-brand-pink blur-md opacity-70 group-hover:opacity-100 transition"></div>
+        <div class="absolute -inset-0.5 rounded-full bg-gradient-to-br from-brand-violet via-brand-cyan to-brand-pink animate-spin-slow"></div>
+        <img src="profile.jpg" alt="Shakeel Ahmad" loading="eager"
+          class="relative w-full h-full rounded-full object-cover object-top border-2 border-ink-0 shadow-[0_20px_50px_-15px_rgba(124,92,255,.55)]"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="hidden relative w-full h-full rounded-full place-items-center text-4xl font-display font-bold text-white bg-gradient-to-br from-brand-violet to-brand-cyan border-2 border-ink-0">SA</div>
+      </div>
+
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-400/10 border border-cyan-400/25 text-cyan-200 text-xs font-medium uppercase tracking-[0.08em] mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-soft"></span>
+        Available for Opportunities
+      </span>
+
+      <h1 class="font-display font-extrabold text-[clamp(2.8rem,8vw,5.6rem)] leading-[1.02] tracking-[-0.035em] text-grad mb-3.5 animate-shine">
+        Shakeel Ahmad
+      </h1>
+      <p class="font-display font-medium text-[clamp(1.05rem,2vw,1.4rem)] text-slate-300 mb-5">Lead Full Stack Developer</p>
+      <p class="max-w-2xl mx-auto text-slate-400 text-base leading-[1.75] mb-10">
         8+ years building scalable web platforms · PHP · Laravel · Vue.js · React · AWS · AI-Assisted Dev
       </p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">8+</span>
-          <span class="stat-label">Years Experience</span>
+
+      <!-- Stats -->
+      <div class="inline-flex flex-wrap items-center justify-center gap-y-1.5 gap-x-5 px-7 py-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur mb-10">
+        <div class="flex flex-col items-center min-w-[96px]">
+          <span class="font-display font-bold text-2xl tracking-tight text-grad-vc">8+</span>
+          <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider mt-0.5">Years Experience</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">30+</span>
-          <span class="stat-label">Projects Delivered</span>
+        <div class="hidden sm:block w-px h-7 bg-white/10"></div>
+        <div class="flex flex-col items-center min-w-[96px]">
+          <span class="font-display font-bold text-2xl tracking-tight text-grad-vc">30+</span>
+          <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider mt-0.5">Projects Delivered</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">85%</span>
-          <span class="stat-label">Manual Work Reduced</span>
+        <div class="hidden sm:block w-px h-7 bg-white/10"></div>
+        <div class="flex flex-col items-center min-w-[96px]">
+          <span class="font-display font-bold text-2xl tracking-tight text-grad-vc">85%</span>
+          <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider mt-0.5">Manual Work Reduced</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">81M+</span>
-          <span class="stat-label">Variants Processed</span>
+        <div class="hidden sm:block w-px h-7 bg-white/10"></div>
+        <div class="flex flex-col items-center min-w-[96px]">
+          <span class="font-display font-bold text-2xl tracking-tight text-grad-vc">81M+</span>
+          <span class="text-[0.72rem] text-slate-500 uppercase tracking-wider mt-0.5">Variants Processed</span>
         </div>
       </div>
-      <div class="hero-actions">
-        <a href="https://www.linkedin.com/in/shakeel-ahmad-sw-engineer/" target="_blank" class="btn-primary">
+
+      <!-- Actions -->
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://www.linkedin.com/in/shakeel-ahmad-sw-engineer/" target="_blank"
+          class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-br from-brand-violet to-brand-cyan shadow-[0_12px_32px_-10px_rgba(124,92,255,.65)] hover:brightness-110 hover:-translate-y-0.5 transition">
           <i class="fab fa-linkedin"></i> LinkedIn
         </a>
-        <a href="https://github.com/Shakeelnasafian" target="_blank" class="btn-secondary">
+        <a href="https://github.com/Shakeelnasafian" target="_blank"
+          class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold text-white bg-white/5 border border-white/15 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5 transition">
           <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="mailto:shakeelnasafian@gmail.com" class="btn-secondary">
+        <a href="mailto:shakeelnasafian@gmail.com"
+          class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold text-white bg-white/5 border border-white/15 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5 transition">
           <i class="fas fa-envelope"></i> Email
         </a>
-        <a href="tel:+971508416653" class="btn-secondary">
+        <a href="tel:+971508416653"
+          class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold text-white bg-white/5 border border-white/15 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5 transition">
           <i class="fas fa-phone"></i> +971 50 84 16 653
         </a>
       </div>
     </div>
-    <div class="hero-scroll-hint">
+
+    <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-500 text-[0.72rem] uppercase tracking-[0.18em] animate-bob">
       <span>Scroll to explore</span>
-      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-chevron-down text-sm"></i>
     </div>
   </header>
 
   <!-- ── ABOUT / SUMMARY ── -->
-  <section class="section-light" id="summary">
-    <div class="container-portfolio">
-      <div class="summary-card">
-        <div class="summary-icon"><i class="fas fa-user-tie"></i></div>
-        <div class="summary-text">
-          <p>
-            Results-driven <strong>Lead Full Stack Developer</strong> with 8+ years of experience architecting and delivering
-            high-performance web applications that scale. Expert in <strong>PHP ecosystems (Laravel, CodeIgniter)</strong>
-            and modern JavaScript frameworks (<strong>Vue.js, React</strong>), with a strong focus on engineering
-            excellence and business impact. Skilled in leading cross-functional teams, implementing DevOps practices, and
-            optimizing cloud infrastructure on <strong>AWS</strong>. Early adopter of AI-assisted development tools —
-            <strong>Claude, Cursor, Codex, Anti Gravity</strong> — to accelerate delivery and code quality. Passionate about
-            creating elegant solutions to complex technical challenges while driving measurable business outcomes — from
-            healthcare LIMS platforms processing billions of genetic variants to press-release systems reaching 1.2M+ monthly visitors.
+  <section id="summary" class="relative py-24 md:py-32 bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
+    <div class="container max-w-[1200px] mx-auto px-7 relative z-10">
+      <div class="fade-up relative grid md:grid-cols-[84px_1fr] gap-7 items-start p-8 md:p-10 rounded-3xl bg-white border border-slate-200 shadow-[0_30px_80px_-40px_rgba(15,17,35,.25)] overflow-hidden">
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-violet via-brand-cyan to-brand-pink"></div>
+        <div class="w-[84px] h-[84px] grid place-items-center rounded-3xl bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet text-3xl border border-violet-200">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <div>
+          <p class="text-slate-600 text-base leading-[1.85]">
+            Results-driven <strong class="text-slate-900 font-semibold">Lead Full Stack Developer</strong> with 8+ years of experience architecting and delivering high-performance web applications that scale. Expert in <strong class="text-slate-900 font-semibold">PHP ecosystems (Laravel, CodeIgniter)</strong> and modern JavaScript frameworks (<strong class="text-slate-900 font-semibold">Vue.js, React</strong>), with a strong focus on engineering excellence and business impact. Skilled in leading cross-functional teams, implementing DevOps practices, and optimizing cloud infrastructure on <strong class="text-slate-900 font-semibold">AWS</strong>. Early adopter of AI-assisted development tools — <strong class="text-slate-900 font-semibold">Claude, Cursor, Codex, Anti Gravity</strong> — to accelerate delivery and code quality. Passionate about creating elegant solutions to complex technical challenges while driving measurable business outcomes — from healthcare LIMS platforms processing billions of genetic variants to press-release systems reaching 1.2M+ monthly visitors.
           </p>
         </div>
       </div>
@@ -105,164 +267,194 @@
   </section>
 
   <!-- ── EXPERIENCE ── -->
-  <section class="section-dark" id="experience">
-    <div class="container-portfolio">
-      <h2 class="section-title light">
-        <span class="section-title-number">01</span> Professional Experience
+  <section id="experience" class="relative py-24 md:py-32 ambient-glow bg-ink-0">
+    <div class="container max-w-[1200px] mx-auto px-7 relative z-10">
+      <h2 class="flex items-center gap-4 font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] tracking-[-0.02em] mb-16 text-white">
+        <span class="font-mono text-[0.55em] font-medium px-3 py-1.5 rounded-full text-brand-violet bg-violet-500/10 border border-violet-500/25 tracking-widest uppercase">01</span>
+        Professional Experience
       </h2>
-      <div class="timeline">
 
-        <!-- Job 1 — AG Holding -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
+      <div class="relative pl-7">
+        <div class="tl-line"></div>
+
+        <!-- Job 1 -->
+        <div class="fade-up relative mb-9">
+          <div class="tl-dot"></div>
+          <div class="glass rounded-2xl p-7 md:p-8 transition-all hover:-translate-y-1">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
               <div>
-                <h3 class="timeline-role">Lead Full Stack Developer</h3>
-                <p class="timeline-company"><i class="fas fa-building"></i> AG Holding — Dubai, UAE</p>
+                <h3 class="font-display font-semibold text-lg tracking-tight text-white">Lead Full Stack Developer</h3>
+                <p class="text-sm text-slate-300 mt-1 flex items-center gap-2"><i class="fas fa-building text-brand-cyan"></i> AG Holding — Dubai, UAE</p>
               </div>
-              <span class="timeline-period">Oct 2024 – Present</span>
+              <span class="font-mono text-xs text-brand-cyan px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/25 whitespace-nowrap">Oct 2024 – Present</span>
             </div>
-            <div class="timeline-tags">
-              <span>Laravel</span><span>Vue.js</span><span>AWS</span><span>Docker</span>
-              <span>Inertia.js</span><span>GitHub Actions</span><span>Tailwind CSS</span>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Laravel</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Vue.js</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">AWS</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Docker</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Inertia.js</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">GitHub Actions</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Tailwind CSS</span>
             </div>
-            <ul class="timeline-list">
-              <li>Promoted to Lead Full Stack Developer, managing architecture and delivery of complex healthcare platforms including scalable medical reporting and diagnostic systems.</li>
-              <li>Spearheading full-cycle development of LIMS and diagnostic reporting systems using Laravel, Vue.js, and AWS infrastructure.</li>
-              <li>Mentoring and coordinating a team of developers, ensuring adherence to coding standards and delivery timelines.</li>
-              <li>Leading DevOps efforts — CI/CD pipelines, Docker containers, and scalable infrastructure on AWS (EC2, S3, RDS).</li>
-              <li>Driving system architecture decisions to ensure reliability, maintainability, and future-proofing of applications.</li>
-              <li>Leveraging AI-assisted development tools (Claude, Cursor AI, Codex, Anti Gravity) to accelerate delivery and elevate code quality.</li>
+            <ul class="flex flex-col gap-2.5 text-[0.95rem] leading-7 text-slate-300">
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Promoted to Lead Full Stack Developer, managing architecture and delivery of complex healthcare platforms including scalable medical reporting and diagnostic systems.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Spearheading full-cycle development of LIMS and diagnostic reporting systems using Laravel, Vue.js, and AWS infrastructure.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Mentoring and coordinating a team of developers, ensuring adherence to coding standards and delivery timelines.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Leading DevOps efforts — CI/CD pipelines, Docker containers, and scalable infrastructure on AWS (EC2, S3, RDS).</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Driving system architecture decisions to ensure reliability, maintainability, and future-proofing of applications.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Leveraging AI-assisted development tools (Claude, Cursor AI, Codex, Anti Gravity) to accelerate delivery and elevate code quality.</li>
             </ul>
-            <div class="timeline-impact">
-              <i class="fas fa-trophy"></i>
-              <strong>Key Impact:</strong> Leading end-to-end delivery of enterprise healthcare platforms with high availability, performance, and compliance standards.
+            <div class="mt-5 flex items-start gap-3 p-4 rounded-xl bg-gradient-to-br from-violet-500/10 to-cyan-500/5 border border-violet-500/20 text-sm text-slate-300">
+              <i class="fas fa-trophy text-amber-400 mt-1"></i>
+              <span><strong class="text-white font-semibold">Key Impact:</strong> Leading end-to-end delivery of enterprise healthcare platforms with high availability, performance, and compliance standards.</span>
             </div>
           </div>
         </div>
 
-        <!-- Job 2 — Litpeaks -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
+        <!-- Job 2 -->
+        <div class="fade-up relative mb-9">
+          <div class="tl-dot"></div>
+          <div class="glass rounded-2xl p-7 md:p-8 transition-all hover:-translate-y-1">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
               <div>
-                <h3 class="timeline-role">Senior Full Stack Developer</h3>
-                <p class="timeline-company"><i class="fas fa-building"></i> Litpeaks FZ-LLC — Dubai, UAE</p>
+                <h3 class="font-display font-semibold text-lg tracking-tight text-white">Senior Full Stack Developer</h3>
+                <p class="text-sm text-slate-300 mt-1 flex items-center gap-2"><i class="fas fa-building text-brand-cyan"></i> Litpeaks FZ-LLC — Dubai, UAE</p>
               </div>
-              <span class="timeline-period">Mar 2022 – Oct 2024</span>
+              <span class="font-mono text-xs text-brand-cyan px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/25 whitespace-nowrap">Mar 2022 – Oct 2024</span>
             </div>
-            <div class="timeline-tags">
-              <span>Laravel</span><span>CodeIgniter</span><span>Vue.js</span><span>React</span>
-              <span>Python</span><span>AWS</span><span>Docker</span><span>DuckDB</span>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Laravel</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">CodeIgniter</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Vue.js</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">React</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Python</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">AWS</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Docker</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">DuckDB</span>
             </div>
-            <ul class="timeline-list">
-              <li>Architected and developed LIMS and VIMS healthcare platforms using Laravel, CodeIgniter, WordPress, Vue.js, React.js, and Python, enabling seamless integration between wellness, laboratory, and genetic testing systems.</li>
-              <li>Implemented bioinformatics data processing pipeline in Python handling <strong>81M+ genetic variants</strong> per user; optimized with AWS S3 (Parquet), DuckDB, and caching, reducing infrastructure costs to <strong>~$30/month</strong>.</li>
-              <li>Built bidirectional data workflows linking wearable devices, wellness systems, and lab machines; reduced manual data entry by <strong>85%</strong> and improved result turnaround by <strong>3.5×</strong>.</li>
-              <li>Coordinated a team of 4 developers — code reviews, documentation, testing strategies, and optimization guides.</li>
-              <li>Set up CI/CD pipelines and automated deployments, decreasing release cycles by <strong>50%</strong>.</li>
-              <li>Designed and enforced system architecture standards, reducing production bugs by <strong>40%</strong>.</li>
+            <ul class="flex flex-col gap-2.5 text-[0.95rem] leading-7 text-slate-300">
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Architected and developed LIMS and VIMS healthcare platforms using Laravel, CodeIgniter, WordPress, Vue.js, React.js, and Python.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Implemented bioinformatics data processing pipeline in Python handling <strong class="text-white">81M+ genetic variants</strong> per user; optimized with AWS S3 (Parquet), DuckDB, and caching, reducing infrastructure costs to <strong class="text-white">~$30/month</strong>.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Built bidirectional data workflows linking wearable devices, wellness systems, and lab machines; reduced manual data entry by <strong class="text-white">85%</strong> and improved result turnaround by <strong class="text-white">3.5×</strong>.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Coordinated a team of 4 developers — code reviews, documentation, testing strategies, and optimization guides.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Set up CI/CD pipelines and automated deployments, decreasing release cycles by <strong class="text-white">50%</strong>.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Designed and enforced system architecture standards, reducing production bugs by <strong class="text-white">40%</strong>.</li>
             </ul>
-            <div class="timeline-impact">
-              <i class="fas fa-trophy"></i>
-              <strong>Key Impact:</strong> Delivered a cost-efficient healthcare data ecosystem processing billions of records securely, improving operational efficiency and client satisfaction.
+            <div class="mt-5 flex items-start gap-3 p-4 rounded-xl bg-gradient-to-br from-violet-500/10 to-cyan-500/5 border border-violet-500/20 text-sm text-slate-300">
+              <i class="fas fa-trophy text-amber-400 mt-1"></i>
+              <span><strong class="text-white font-semibold">Key Impact:</strong> Delivered a cost-efficient healthcare data ecosystem processing billions of records securely.</span>
             </div>
           </div>
         </div>
 
-        <!-- Job 3 — GO-Globe -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
+        <!-- Job 3 -->
+        <div class="fade-up relative mb-9">
+          <div class="tl-dot"></div>
+          <div class="glass rounded-2xl p-7 md:p-8 transition-all hover:-translate-y-1">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
               <div>
-                <h3 class="timeline-role">Software Developer & Project Coordinator</h3>
-                <p class="timeline-company"><i class="fas fa-building"></i> GO-Globe — Dubai, UAE</p>
+                <h3 class="font-display font-semibold text-lg tracking-tight text-white">Software Developer & Project Coordinator</h3>
+                <p class="text-sm text-slate-300 mt-1 flex items-center gap-2"><i class="fas fa-building text-brand-cyan"></i> GO-Globe — Dubai, UAE</p>
               </div>
-              <span class="timeline-period">Dec 2021 – Mar 2022</span>
+              <span class="font-mono text-xs text-brand-cyan px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/25 whitespace-nowrap">Dec 2021 – Mar 2022</span>
             </div>
-            <div class="timeline-tags">
-              <span>Laravel</span><span>WordPress</span><span>JavaScript</span><span>Agile/Scrum</span><span>Odoo</span>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Laravel</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">WordPress</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">JavaScript</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Agile/Scrum</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Odoo</span>
             </div>
-            <ul class="timeline-list">
-              <li>Coordinated end-to-end delivery of multiple software projects in .NET, Odoo, Laravel, and WordPress using Agile/Scrum workflows.</li>
-              <li>Acted as primary liaison between developers, clients, and management — resolving blockers and ensuring alignment on goals.</li>
-              <li>Developed and maintained web applications using PHP (Laravel), WordPress, JavaScript, jQuery, HTML, and CSS.</li>
-              <li>Performed debugging, code optimization, sprint planning, risk management, and quality assurance activities.</li>
+            <ul class="flex flex-col gap-2.5 text-[0.95rem] leading-7 text-slate-300">
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Coordinated end-to-end delivery of multiple software projects in .NET, Odoo, Laravel, and WordPress using Agile/Scrum.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Acted as primary liaison between developers, clients, and management — resolving blockers and ensuring alignment.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Developed and maintained web applications using PHP (Laravel), WordPress, JavaScript, jQuery, HTML, and CSS.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Performed debugging, code optimization, sprint planning, risk management, and quality assurance activities.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Job 4 — Pixako -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
+        <!-- Job 4 -->
+        <div class="fade-up relative mb-9">
+          <div class="tl-dot"></div>
+          <div class="glass rounded-2xl p-7 md:p-8 transition-all hover:-translate-y-1">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
               <div>
-                <h3 class="timeline-role">Senior PHP Developer</h3>
-                <p class="timeline-company"><i class="fas fa-building"></i> Pixako Technologies — Islamabad, Pakistan</p>
+                <h3 class="font-display font-semibold text-lg tracking-tight text-white">Senior PHP Developer</h3>
+                <p class="text-sm text-slate-300 mt-1 flex items-center gap-2"><i class="fas fa-building text-brand-cyan"></i> Pixako Technologies — Islamabad, Pakistan</p>
               </div>
-              <span class="timeline-period">Oct 2019 – Nov 2021</span>
+              <span class="font-mono text-xs text-brand-cyan px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/25 whitespace-nowrap">Oct 2019 – Nov 2021</span>
             </div>
-            <div class="timeline-tags">
-              <span>CodeIgniter</span><span>WordPress</span><span>AWS</span><span>PHP</span><span>Laravel</span>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">CodeIgniter</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">WordPress</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">AWS</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">PHP</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Laravel</span>
             </div>
-            <ul class="timeline-list">
-              <li>Developed and maintained a high-traffic press release distribution platform serving <strong>1.2M+ monthly visitors</strong>, integrated with AWS EC2, RDS, and S3 for syndication to <strong>360+ media outlets</strong>.</li>
-              <li>Led and mentored a team of <strong>7 developers</strong>, ensuring best practices and on-time delivery.</li>
-              <li>Automated RSS feed integration and web crawling, reducing manual tracking effort by <strong>90%</strong>.</li>
-              <li>Engineered a high-performance CodeIgniter replica of WordPress modules, cutting load times by <strong>60%</strong>.</li>
-              <li>Optimized server architecture on AWS for <strong>99.95% uptime</strong>.</li>
+            <ul class="flex flex-col gap-2.5 text-[0.95rem] leading-7 text-slate-300">
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Developed and maintained a high-traffic press release distribution platform serving <strong class="text-white">1.2M+ monthly visitors</strong>, syndicated to <strong class="text-white">360+ media outlets</strong>.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Led and mentored a team of <strong class="text-white">7 developers</strong>, ensuring best practices and on-time delivery.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Automated RSS feed integration and web crawling, reducing manual tracking effort by <strong class="text-white">90%</strong>.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Engineered a high-performance CodeIgniter replica of WordPress modules, cutting load times by <strong class="text-white">60%</strong>.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Optimized server architecture on AWS for <strong class="text-white">99.95% uptime</strong>.</li>
             </ul>
-            <div class="timeline-impact">
-              <i class="fas fa-trophy"></i>
-              <strong>Key Impact:</strong> Scalable content syndication system that increased distribution reach by <strong>320%</strong>.
+            <div class="mt-5 flex items-start gap-3 p-4 rounded-xl bg-gradient-to-br from-violet-500/10 to-cyan-500/5 border border-violet-500/20 text-sm text-slate-300">
+              <i class="fas fa-trophy text-amber-400 mt-1"></i>
+              <span><strong class="text-white font-semibold">Key Impact:</strong> Scalable content syndication system that increased distribution reach by <strong class="text-white">320%</strong>.</span>
             </div>
           </div>
         </div>
 
-        <!-- Job 5 — AMSolutions -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
+        <!-- Job 5 -->
+        <div class="fade-up relative mb-9">
+          <div class="tl-dot"></div>
+          <div class="glass rounded-2xl p-7 md:p-8 transition-all hover:-translate-y-1">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
               <div>
-                <h3 class="timeline-role">WordPress Developer</h3>
-                <p class="timeline-company"><i class="fas fa-building"></i> AMSolutions — Lahore, Pakistan</p>
+                <h3 class="font-display font-semibold text-lg tracking-tight text-white">WordPress Developer</h3>
+                <p class="text-sm text-slate-300 mt-1 flex items-center gap-2"><i class="fas fa-building text-brand-cyan"></i> AMSolutions — Lahore, Pakistan</p>
               </div>
-              <span class="timeline-period">Sep 2018 – Aug 2019</span>
+              <span class="font-mono text-xs text-brand-cyan px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/25 whitespace-nowrap">Sep 2018 – Aug 2019</span>
             </div>
-            <div class="timeline-tags">
-              <span>WordPress</span><span>PHP</span><span>jQuery</span><span>HTML5/CSS3</span><span>MySQL</span>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">WordPress</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">PHP</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">jQuery</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">HTML5/CSS3</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">MySQL</span>
             </div>
-            <ul class="timeline-list">
-              <li>Developed and customized WordPress themes and plugins for clients in law, healthcare, beauty, and e-commerce.</li>
-              <li>Optimized 20+ websites, improving Google PageSpeed scores from <strong>20–30 → 70–80+</strong>.</li>
-              <li>Integrated jQuery and JavaScript for dynamic UI; managed MySQL databases for data storage and retrieval.</li>
+            <ul class="flex flex-col gap-2.5 text-[0.95rem] leading-7 text-slate-300">
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Developed and customized WordPress themes and plugins for clients in law, healthcare, beauty, and e-commerce.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Optimized 20+ websites, improving Google PageSpeed scores from <strong class="text-white">20–30 → 70–80+</strong>.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Integrated jQuery and JavaScript for dynamic UI; managed MySQL databases for data storage and retrieval.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Job 6 — Precise Technology -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
+        <!-- Job 6 -->
+        <div class="fade-up relative">
+          <div class="tl-dot"></div>
+          <div class="glass rounded-2xl p-7 md:p-8 transition-all hover:-translate-y-1">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
               <div>
-                <h3 class="timeline-role">PHP Developer</h3>
-                <p class="timeline-company"><i class="fas fa-building"></i> Precise Technology — Peshawar, Pakistan</p>
+                <h3 class="font-display font-semibold text-lg tracking-tight text-white">PHP Developer</h3>
+                <p class="text-sm text-slate-300 mt-1 flex items-center gap-2"><i class="fas fa-building text-brand-cyan"></i> Precise Technology — Peshawar, Pakistan</p>
               </div>
-              <span class="timeline-period">Aug 2017 – Aug 2018</span>
+              <span class="font-mono text-xs text-brand-cyan px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/25 whitespace-nowrap">Aug 2017 – Aug 2018</span>
             </div>
-            <div class="timeline-tags">
-              <span>PHP</span><span>Laravel</span><span>jQuery</span><span>Bootstrap</span><span>MySQL</span>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">PHP</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Laravel</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">jQuery</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">Bootstrap</span>
+              <span class="px-2.5 py-1 text-[0.74rem] font-medium rounded-full bg-white/5 text-slate-300 border border-white/10">MySQL</span>
             </div>
-            <ul class="timeline-list">
-              <li>Developed and maintained web applications using PHP and Laravel; built responsive UIs with Bootstrap and Materialize CSS.</li>
-              <li>Integrated RESTful APIs, optimized backend logic, and improved application performance.</li>
-              <li>Performed debugging, code reviews, and implemented best development practices with MySQL database management.</li>
+            <ul class="flex flex-col gap-2.5 text-[0.95rem] leading-7 text-slate-300">
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Developed and maintained web applications using PHP and Laravel; built responsive UIs with Bootstrap and Materialize CSS.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Integrated RESTful APIs, optimized backend logic, and improved application performance.</li>
+              <li class="pl-5 relative before:content-['▸'] before:absolute before:left-0 before:text-brand-violet">Performed debugging, code reviews, and implemented best development practices with MySQL database management.</li>
             </ul>
           </div>
         </div>
@@ -272,104 +464,148 @@
   </section>
 
   <!-- ── SKILLS ── -->
-  <section class="section-light" id="skills">
-    <div class="container-portfolio">
-      <h2 class="section-title">
-        <span class="section-title-number">02</span> Technical Skills
+  <section id="skills" class="relative py-24 md:py-32 bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
+    <div class="container max-w-[1200px] mx-auto px-7">
+      <h2 class="flex items-center gap-4 font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] tracking-[-0.02em] mb-16 text-slate-900">
+        <span class="font-mono text-[0.55em] font-medium px-3 py-1.5 rounded-full text-brand-cyan bg-cyan-400/10 border border-cyan-400/25 tracking-widest uppercase">02</span>
+        Technical Skills
       </h2>
-      <div class="skills-grid">
 
-        <div class="skill-card">
-          <div class="skill-card-icon"><i class="fas fa-server"></i></div>
-          <h4>Backend Development</h4>
-          <div class="skill-tags">
-            <span>PHP 7/8</span><span>Laravel</span><span>CodeIgniter</span><span>Livewire</span>
-            <span>WordPress</span><span>REST APIs</span><span>Python</span><span>FastAPI</span>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <!-- Backend -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(124,92,255,.25)] hover:border-violet-500/30 transition">
+          <div class="w-13 h-13 w-[52px] h-[52px] grid place-items-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet text-xl mb-4 border border-violet-200"><i class="fas fa-server"></i></div>
+          <h4 class="font-display font-semibold text-base mb-3.5">Backend Development</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">PHP 7/8</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Laravel</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">CodeIgniter</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Livewire</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">WordPress</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">REST APIs</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Python</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">FastAPI</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <div class="skill-card-icon"><i class="fas fa-desktop"></i></div>
-          <h4>Frontend Technologies</h4>
-          <div class="skill-tags">
-            <span>Vue.js 2/3</span><span>React.js</span><span>Inertia.js</span><span>TypeScript</span>
-            <span>Tailwind CSS</span><span>Bootstrap</span><span>HTML5/CSS3</span><span>Alpine.js</span>
+        <!-- Frontend -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(124,92,255,.25)] hover:border-violet-500/30 transition">
+          <div class="w-[52px] h-[52px] grid place-items-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet text-xl mb-4 border border-violet-200"><i class="fas fa-desktop"></i></div>
+          <h4 class="font-display font-semibold text-base mb-3.5">Frontend Technologies</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Vue.js 2/3</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">React.js</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Inertia.js</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">TypeScript</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Tailwind CSS</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Bootstrap</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">HTML5/CSS3</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Alpine.js</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <div class="skill-card-icon"><i class="fas fa-database"></i></div>
-          <h4>Databases & Caching</h4>
-          <div class="skill-tags">
-            <span>MySQL</span><span>SQL Server</span><span>Redis</span><span>DuckDB</span>
-            <span>SQLite</span><span>Query Optimization</span><span>DB Indexing</span>
+        <!-- Databases -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(124,92,255,.25)] hover:border-violet-500/30 transition">
+          <div class="w-[52px] h-[52px] grid place-items-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet text-xl mb-4 border border-violet-200"><i class="fas fa-database"></i></div>
+          <h4 class="font-display font-semibold text-base mb-3.5">Databases & Caching</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">MySQL</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">SQL Server</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Redis</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">DuckDB</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">SQLite</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Query Optimization</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">DB Indexing</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <div class="skill-card-icon"><i class="fab fa-aws"></i></div>
-          <h4>Cloud & DevOps</h4>
-          <div class="skill-tags">
-            <span>AWS EC2</span><span>RDS</span><span>S3</span><span>Lambda</span>
-            <span>Lightsail</span><span>Docker</span><span>Nginx</span><span>GitHub Actions</span>
-            <span>GitLab CI/CD</span>
+        <!-- Cloud -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(124,92,255,.25)] hover:border-violet-500/30 transition">
+          <div class="w-[52px] h-[52px] grid place-items-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet text-xl mb-4 border border-violet-200"><i class="fab fa-aws"></i></div>
+          <h4 class="font-display font-semibold text-base mb-3.5">Cloud & DevOps</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">AWS EC2</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">RDS</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">S3</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Lambda</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Lightsail</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Docker</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Nginx</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">GitHub Actions</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">GitLab CI/CD</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <div class="skill-card-icon"><i class="fas fa-sitemap"></i></div>
-          <h4>Architecture & Patterns</h4>
-          <div class="skill-tags">
-            <span>SOLID Principles</span><span>RESTful APIs</span><span>Event-Driven</span>
-            <span>Design Patterns</span><span>Queues/Jobs</span><span>Webhooks</span>
-            <span>Microservices</span>
+        <!-- Architecture -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(124,92,255,.25)] hover:border-violet-500/30 transition">
+          <div class="w-[52px] h-[52px] grid place-items-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet text-xl mb-4 border border-violet-200"><i class="fas fa-sitemap"></i></div>
+          <h4 class="font-display font-semibold text-base mb-3.5">Architecture & Patterns</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">SOLID</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">RESTful APIs</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Event-Driven</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Design Patterns</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Queues/Jobs</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Webhooks</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Microservices</span>
           </div>
         </div>
 
-        <div class="skill-card">
-          <div class="skill-card-icon"><i class="fas fa-plug"></i></div>
-          <h4>Integrations & Testing</h4>
-          <div class="skill-tags">
-            <span>PayPal</span><span>Stripe</span><span>SSO / OAuth 2.0</span><span>NetSuite API</span>
-            <span>Power Automate</span><span>PHPUnit</span><span>Cypress</span><span>Postman</span>
+        <!-- Integrations -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(124,92,255,.25)] hover:border-violet-500/30 transition">
+          <div class="w-[52px] h-[52px] grid place-items-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet text-xl mb-4 border border-violet-200"><i class="fas fa-plug"></i></div>
+          <h4 class="font-display font-semibold text-base mb-3.5">Integrations & Testing</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">PayPal</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Stripe</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">SSO / OAuth 2.0</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">NetSuite API</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Power Automate</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">PHPUnit</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Cypress</span>
+            <span class="px-2.5 py-1 text-[0.78rem] font-medium rounded-lg bg-slate-50 text-slate-600 border border-slate-200">Postman</span>
           </div>
         </div>
 
-        <div class="skill-card ai-card">
-          <div class="skill-card-icon ai-icon"><i class="fas fa-robot"></i></div>
-          <h4>AI-Assisted Development</h4>
-          <div class="skill-tags">
-            <span class="ai-tag">Anthropic Claude</span>
-            <span class="ai-tag">OpenAI Codex</span>
-            <span class="ai-tag">Cursor AI</span>
-            <span class="ai-tag">Anti Gravity</span>
-            <span class="ai-tag">GitHub Copilot</span>
-            <span class="ai-tag">Vibe Coding</span>
-            <span class="ai-tag">AI Code Generation</span>
+        <!-- AI Card (full width on lg) -->
+        <div class="fade-up sm:col-span-2 lg:col-span-3 p-7 rounded-2xl bg-gradient-to-br from-ink-2 to-[#1a1830] border border-violet-500/25 text-slate-200 hover:-translate-y-1 transition">
+          <div class="flex items-start gap-5 flex-wrap">
+            <div class="w-[52px] h-[52px] grid place-items-center rounded-2xl bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-xl shadow-[0_12px_30px_-10px_rgba(124,92,255,.6)] flex-shrink-0"><i class="fas fa-robot"></i></div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-display font-semibold text-lg text-white mb-3">AI-Assisted Development</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-3 py-1 text-[0.78rem] font-medium rounded-lg bg-white/[0.06] text-violet-200 border border-violet-500/35 hover:bg-violet-500/25 hover:text-white transition">Anthropic Claude</span>
+                <span class="px-3 py-1 text-[0.78rem] font-medium rounded-lg bg-white/[0.06] text-violet-200 border border-violet-500/35 hover:bg-violet-500/25 hover:text-white transition">OpenAI Codex</span>
+                <span class="px-3 py-1 text-[0.78rem] font-medium rounded-lg bg-white/[0.06] text-violet-200 border border-violet-500/35 hover:bg-violet-500/25 hover:text-white transition">Cursor AI</span>
+                <span class="px-3 py-1 text-[0.78rem] font-medium rounded-lg bg-white/[0.06] text-violet-200 border border-violet-500/35 hover:bg-violet-500/25 hover:text-white transition">Anti Gravity</span>
+                <span class="px-3 py-1 text-[0.78rem] font-medium rounded-lg bg-white/[0.06] text-violet-200 border border-violet-500/35 hover:bg-violet-500/25 hover:text-white transition">GitHub Copilot</span>
+                <span class="px-3 py-1 text-[0.78rem] font-medium rounded-lg bg-white/[0.06] text-violet-200 border border-violet-500/35 hover:bg-violet-500/25 hover:text-white transition">Vibe Coding</span>
+                <span class="px-3 py-1 text-[0.78rem] font-medium rounded-lg bg-white/[0.06] text-violet-200 border border-violet-500/35 hover:bg-violet-500/25 hover:text-white transition">AI Code Generation</span>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
 
       <!-- Specializations -->
-      <div class="specializations">
-        <h4 class="spec-heading">Specialized Expertise</h4>
-        <div class="spec-items">
-          <div class="spec-item">
-            <i class="fas fa-dna"></i>
-            <span>LIMS/WIMS Integration & Bioinformatics Data Processing</span>
+      <div class="p-8 rounded-2xl bg-white border border-slate-200">
+        <h4 class="font-display text-xs font-semibold uppercase tracking-[0.16em] text-brand-violet mb-5">Specialized Expertise</h4>
+        <div class="grid sm:grid-cols-2 gap-3.5">
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50/50 border border-slate-200 text-sm text-slate-600">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet flex-shrink-0"><i class="fas fa-dna"></i></span>
+            LIMS/WIMS Integration & Bioinformatics Data Processing
           </div>
-          <div class="spec-item">
-            <i class="fas fa-file-pdf"></i>
-            <span>PDF Generation (wkhtmltopdf, SnappyPDF, DomPDF)</span>
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50/50 border border-slate-200 text-sm text-slate-600">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet flex-shrink-0"><i class="fas fa-file-pdf"></i></span>
+            PDF Generation (wkhtmltopdf, SnappyPDF, DomPDF)
           </div>
-          <div class="spec-item">
-            <i class="fas fa-tachometer-alt"></i>
-            <span>Caching Strategies & PageSpeed Optimization</span>
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50/50 border border-slate-200 text-sm text-slate-600">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet flex-shrink-0"><i class="fas fa-tachometer-alt"></i></span>
+            Caching Strategies & PageSpeed Optimization
           </div>
-          <div class="spec-item">
-            <i class="fas fa-search"></i>
-            <span>Technical SEO & Google Analytics</span>
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50/50 border border-slate-200 text-sm text-slate-600">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-violet-100 to-cyan-100 text-brand-violet flex-shrink-0"><i class="fas fa-search"></i></span>
+            Technical SEO & Google Analytics
           </div>
         </div>
       </div>
@@ -377,259 +613,233 @@
   </section>
 
   <!-- ── FEATURED PROJECTS ── -->
-  <section class="section-dark" id="projects">
-    <div class="container-portfolio">
-      <h2 class="section-title light">
-        <span class="section-title-number">03</span> Featured Projects
+  <section id="projects" class="relative py-24 md:py-32 ambient-glow bg-ink-0">
+    <div class="container max-w-[1200px] mx-auto px-7 relative z-10">
+      <h2 class="flex items-center gap-4 font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] tracking-[-0.02em] mb-16 text-white">
+        <span class="font-mono text-[0.55em] font-medium px-3 py-1.5 rounded-full text-brand-violet bg-violet-500/10 border border-violet-500/25 tracking-widest uppercase">03</span>
+        Featured Projects
       </h2>
-      <div class="projects-grid">
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- WIMS360 -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon healthcare"><i class="fas fa-heartbeat"></i></div>
-            <div class="project-links-top">
-              <a href="https://prcn.wims360.com" target="_blank" class="project-ext-link">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-healthcare"><i class="fas fa-heartbeat"></i></div>
+            <a href="https://prcn.wims360.com" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fas fa-external-link-alt"></i></a>
           </div>
-          <h3 class="project-title">WIMS360</h3>
-          <p class="project-subtitle">Healthcare Management Platform</p>
-          <p class="project-desc">Enterprise-grade patient monitoring system integrating medical lab workflows with real-time data from wearable devices.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Scalable architecture with Laravel, Inertia.js, Vue 3 — response times cut by 40%</li>
-            <li><i class="fas fa-check"></i> WebSockets via Pusher for live monitoring of 500+ concurrent patients</li>
-            <li><i class="fas fa-check"></i> REST APIs integrating 6+ external systems including LIMS and wearables</li>
-            <li><i class="fas fa-check"></i> HIPAA-compliant data storage on AWS (S3, RDS, EC2)</li>
-            <li><i class="fas fa-check"></i> Manual data entry reduced by <strong>85%</strong> via automated sync</li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">WIMS360</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Healthcare Management Platform</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Enterprise-grade patient monitoring system integrating medical lab workflows with real-time data from wearable devices.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Scalable architecture with Laravel, Inertia.js, Vue 3 — response times cut by 40%</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> WebSockets via Pusher for live monitoring of 500+ concurrent patients</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> REST APIs integrating 6+ external systems including LIMS and wearables</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> HIPAA-compliant data storage on AWS (S3, RDS, EC2)</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Manual data entry reduced by <strong class="text-white">85%</strong> via automated sync</li>
           </ul>
-          <div class="project-tech">
-            <span>Laravel</span><span>Vue.js</span><span>AWS</span><span>WebSockets</span><span>Redis</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Laravel</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Vue.js</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">AWS</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">WebSockets</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Redis</span>
           </div>
         </div>
 
         <!-- LIMS360 -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon lab"><i class="fas fa-flask"></i></div>
-            <div class="project-links-top">
-              <a href="https://lims.agiomix.com/" target="_blank" class="project-ext-link">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-lab"><i class="fas fa-flask"></i></div>
+            <a href="https://lims.agiomix.com/" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fas fa-external-link-alt"></i></a>
           </div>
-          <h3 class="project-title">LIMS360</h3>
-          <p class="project-subtitle">Laboratory Information Management System</p>
-          <p class="project-desc">Comprehensive cloud-hosted LIMS for healthcare providers to manage laboratory workflows, genetic samples, and clinical reporting.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Role-based access for hospital staff, lab techs, bioinformatics, and counselors</li>
-            <li><i class="fas fa-check"></i> Direct lab equipment integration — data entry errors down <strong>78%</strong>, processing <strong>3.5×</strong> faster</li>
-            <li><i class="fas fa-check"></i> Chain-of-custody genetic sample tracking for regulatory compliance</li>
-            <li><i class="fas fa-check"></i> Branded PDF report engine improving client satisfaction by <strong>47%</strong></li>
-            <li><i class="fas fa-check"></i> Real-time dashboard cutting sample turnaround by <strong>35%</strong></li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">LIMS360</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Laboratory Information Management System</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Comprehensive cloud-hosted LIMS for healthcare providers to manage laboratory workflows, genetic samples, and clinical reporting.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Role-based access for hospital staff, lab techs, bioinformatics, and counselors</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Direct lab equipment integration — data entry errors down <strong class="text-white">78%</strong>, processing <strong class="text-white">3.5×</strong> faster</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Chain-of-custody genetic sample tracking for regulatory compliance</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Branded PDF report engine improving client satisfaction by <strong class="text-white">47%</strong></li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Real-time dashboard cutting sample turnaround by <strong class="text-white">35%</strong></li>
           </ul>
-          <div class="project-tech">
-            <span>Laravel</span><span>React.js</span><span>AWS</span><span>MySQL</span><span>Docker</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Laravel</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">React.js</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">AWS</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">MySQL</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Docker</span>
           </div>
         </div>
 
         <!-- Abiomix -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon bio"><i class="fas fa-dna"></i></div>
-            <div class="project-links-top">
-              <a href="https://abiomix.com/" target="_blank" class="project-ext-link">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-bio"><i class="fas fa-dna"></i></div>
+            <a href="https://abiomix.com/" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fas fa-external-link-alt"></i></a>
           </div>
-          <h3 class="project-title">Abiomix</h3>
-          <p class="project-subtitle">Bioinformatics Analysis Platform</p>
-          <p class="project-desc">Secure platform for physicians to upload and analyze genomic samples for COVID-19 and genetic disease diagnosis.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Modular architecture handling 200+ daily sample analyses with 99.9% accuracy</li>
-            <li><i class="fas fa-check"></i> ML models for automated HPO term parsing — diagnostic time cut by <strong>65%</strong></li>
-            <li><i class="fas fa-check"></i> HIPAA & GDPR compliant role-based access control</li>
-            <li><i class="fas fa-check"></i> Docker-based microservices for scalable compute-intensive operations</li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">Abiomix</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Bioinformatics Analysis Platform</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Secure platform for physicians to upload and analyze genomic samples for COVID-19 and genetic disease diagnosis.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Modular architecture handling 200+ daily sample analyses with 99.9% accuracy</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> ML models for automated HPO term parsing — diagnostic time cut by <strong class="text-white">65%</strong></li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> HIPAA & GDPR compliant role-based access control</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Docker-based microservices for scalable compute-intensive operations</li>
           </ul>
-          <div class="project-tech">
-            <span>Laravel</span><span>Livewire</span><span>AWS</span><span>Docker</span><span>Python</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Laravel</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Livewire</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">AWS</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Docker</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Python</span>
           </div>
         </div>
 
         <!-- Digital Profile -->
-        <div class="project-card featured">
-          <div class="project-featured-badge">Open Source</div>
-          <div class="project-card-header">
-            <div class="project-icon digital"><i class="fas fa-id-card"></i></div>
-            <div class="project-links-top">
-              <a href="https://digital-profile-bay.vercel.app" target="_blank" class="project-ext-link" title="Live Demo">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-              <a href="https://github.com/Shakeelnasafian/Digital-Profile" target="_blank" class="project-ext-link" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col bg-gradient-to-br from-violet-500/[.07] to-cyan-500/[.04] border-violet-500/25">
+          <span class="absolute top-4 right-4 font-mono text-[0.66rem] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full bg-gradient-to-br from-brand-violet to-brand-cyan text-white z-10">Open Source</span>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-digital"><i class="fas fa-id-card"></i></div>
+            <div class="flex gap-2">
+              <a href="https://digital-profile-bay.vercel.app" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/Shakeelnasafian/Digital-Profile" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          <h3 class="project-title">Digital Profile</h3>
-          <p class="project-subtitle">Professional Digital Card & Portfolio Platform</p>
-          <p class="project-desc">Comprehensive platform enabling professionals to create scannable digital business cards with full portfolio systems, lead generation, and analytics.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Built with Laravel 12 + React 19 + Inertia.js + TypeScript for type-safe SPA experience</li>
-            <li><i class="fas fa-check"></i> Customizable card templates (default, bold, glass) with QR code & vCard/PDF export</li>
-            <li><i class="fas fa-check"></i> Analytics dashboard: profile views, 30-day trends, device breakdown, referrer sources</li>
-            <li><i class="fas fa-check"></i> Lead generation with visitor contact forms, CSV export, and testimonial workflows</li>
-            <li><i class="fas fa-check"></i> Social integrations: LinkedIn, GitHub, X/Twitter, Instagram, YouTube, TikTok, and more</li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">Digital Profile</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Professional Digital Card & Portfolio Platform</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Comprehensive platform enabling professionals to create scannable digital business cards with full portfolio systems, lead generation, and analytics.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Built with Laravel 12 + React 19 + Inertia.js + TypeScript</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Customizable card templates with QR code & vCard/PDF export</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Analytics dashboard: views, 30-day trends, device breakdown</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Lead generation with visitor contact forms and CSV export</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Social integrations: LinkedIn, GitHub, X, Instagram, YouTube, TikTok</li>
           </ul>
-          <div class="project-tech">
-            <span>Laravel 12</span><span>React 19</span><span>Inertia.js</span><span>TypeScript</span><span>Tailwind CSS</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Laravel 12</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">React 19</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Inertia.js</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">TypeScript</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Tailwind CSS</span>
           </div>
         </div>
 
         <!-- LIS -->
-        <div class="project-card featured">
-          <div class="project-featured-badge">Open Source</div>
-          <div class="project-card-header">
-            <div class="project-icon lis"><i class="fas fa-microscope"></i></div>
-            <div class="project-links-top">
-              <a href="https://github.com/Shakeelnasafian/laboratory-system" target="_blank" class="project-ext-link" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col bg-gradient-to-br from-violet-500/[.07] to-cyan-500/[.04] border-violet-500/25">
+          <span class="absolute top-4 right-4 font-mono text-[0.66rem] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full bg-gradient-to-br from-brand-violet to-brand-cyan text-white z-10">Open Source</span>
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-lis"><i class="fas fa-microscope"></i></div>
+            <a href="https://github.com/Shakeelnasafian/laboratory-system" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fab fa-github"></i></a>
           </div>
-          <h3 class="project-title">LIS — Laboratory System</h3>
-          <p class="project-subtitle">Multi-Tenant Diagnostic Platform</p>
-          <p class="project-desc">Multi-tenant LIS for diagnostic labs providing complete patient management, test workflows, billing, and PDF report generation with strict data isolation.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Login-based multi-tenancy via custom <code>BelongsToLab</code> trait for automatic query scoping</li>
-            <li><i class="fas fa-check"></i> RBAC via Spatie — Super Admin, Lab Admin, Incharge, Receptionist, Technician</li>
-            <li><i class="fas fa-check"></i> End-to-end order management: registration → sample collection → result entry → verification</li>
-            <li><i class="fas fa-check"></i> PDF report generation with customizable lab headers using Laravel DomPDF</li>
-            <li><i class="fas fa-check"></i> Complete data isolation enabling secure SaaS deployment for multiple labs</li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">LIS — Laboratory System</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Multi-Tenant Diagnostic Platform</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Multi-tenant LIS for diagnostic labs providing complete patient management, test workflows, billing, and PDF report generation with strict data isolation.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Login-based multi-tenancy via custom <code class="font-mono text-[0.82em] px-1.5 py-px bg-violet-500/15 text-violet-200 rounded">BelongsToLab</code> trait</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> RBAC via Spatie — Super Admin, Lab Admin, Receptionist, Technician</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> End-to-end order management: registration → sample → result → verification</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> PDF report generation with customizable lab headers (Laravel DomPDF)</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Complete data isolation enabling secure SaaS deployment</li>
           </ul>
-          <div class="project-tech">
-            <span>Laravel 12</span><span>Livewire 4</span><span>Alpine.js</span><span>Tailwind CSS</span><span>MySQL</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Laravel 12</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Livewire 4</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Alpine.js</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Tailwind CSS</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">MySQL</span>
           </div>
         </div>
 
         <!-- TP Auctions -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon luxury"><i class="fas fa-gavel"></i></div>
-            <div class="project-links-top">
-              <a href="https://tpauctions.net/" target="_blank" class="project-ext-link">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-luxury"><i class="fas fa-gavel"></i></div>
+            <a href="https://tpauctions.net/" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fas fa-external-link-alt"></i></a>
           </div>
-          <h3 class="project-title">TP Auctions</h3>
-          <p class="project-subtitle">Luxury Item Auction Platform</p>
-          <p class="project-desc">High-end auction platform specializing in luxury watches and designer bags — managed as Project Manager overseeing full development team.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Led cross-functional team delivering web platform and mobile application</li>
-            <li><i class="fas fa-check"></i> Real-time bidding via WebSockets for seamless high-value transactions ($10K+ avg)</li>
-            <li><i class="fas fa-check"></i> Secure payment gateway integration for luxury items</li>
-            <li><i class="fas fa-check"></i> Agile/Scrum with 2-week sprints — on-time delivery improved by <strong>40%</strong></li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">TP Auctions</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Luxury Item Auction Platform</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">High-end auction platform specializing in luxury watches and designer bags — managed as Project Manager overseeing full development team.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Led cross-functional team delivering web platform and mobile application</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Real-time bidding via WebSockets ($10K+ avg transaction)</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Secure payment gateway integration for luxury items</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Agile/Scrum with 2-week sprints — on-time delivery up <strong class="text-white">40%</strong></li>
           </ul>
-          <div class="project-tech">
-            <span>Node.js</span><span>React</span><span>WebSockets</span><span>Mobile App</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Node.js</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">React</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">WebSockets</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Mobile App</span>
           </div>
         </div>
 
         <!-- iCrowdNewswire -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon press"><i class="fas fa-newspaper"></i></div>
-            <div class="project-links-top">
-              <a href="https://icrowdnewswire.com/" target="_blank" class="project-ext-link">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-press"><i class="fas fa-newspaper"></i></div>
+            <a href="https://icrowdnewswire.com/" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fas fa-external-link-alt"></i></a>
           </div>
-          <h3 class="project-title">iCrowdNewswire</h3>
-          <p class="project-subtitle">AI-Powered Press Release Platform</p>
-          <p class="project-desc">Scalable press release distribution platform with global reach and automated content syndication to 300+ networks.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Hybrid WordPress/CodeIgniter platform processing 1,000+ daily press releases</li>
-            <li><i class="fas fa-check"></i> API-driven distribution to 300+ global networks with 99.8% delivery rate</li>
-            <li><i class="fas fa-check"></i> Custom bots for automated content collection — inventory up <strong>75%</strong></li>
-            <li><i class="fas fa-check"></i> SEO-optimized modules boosting organic traffic by <strong>120% YoY</strong></li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">iCrowdNewswire</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">AI-Powered Press Release Platform</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Scalable press release distribution platform with global reach and automated content syndication to 300+ networks.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Hybrid WordPress/CodeIgniter platform processing 1,000+ daily press releases</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> API-driven distribution to 300+ global networks (99.8% delivery rate)</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Custom bots for content collection — inventory up <strong class="text-white">75%</strong></li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> SEO-optimized modules boosting organic traffic by <strong class="text-white">120% YoY</strong></li>
           </ul>
-          <div class="project-tech">
-            <span>CodeIgniter</span><span>WordPress</span><span>AWS</span><span>RSS</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">CodeIgniter</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">WordPress</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">AWS</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">RSS</span>
           </div>
         </div>
 
         <!-- Management Portal -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon digital"><i class="fas fa-tasks"></i></div>
-            <div class="project-links-top">
-              <a href="https://github.com/Shakeelnasafian" target="_blank" class="project-ext-link" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-digital"><i class="fas fa-tasks"></i></div>
+            <a href="https://github.com/Shakeelnasafian" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fab fa-github"></i></a>
           </div>
-          <h3 class="project-title">Management Portal</h3>
-          <p class="project-subtitle">Task & Operations Management Web App</p>
-          <p class="project-desc">A full-featured web application for managing various operational tasks efficiently, with a React frontend backed by a Node.js/Express REST API and MongoDB data store.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> React-powered SPA with dynamic dashboards for real-time task tracking</li>
-            <li><i class="fas fa-check"></i> RESTful API built with Node.js and Express for scalable backend logic</li>
-            <li><i class="fas fa-check"></i> MongoDB document store enabling flexible data modelling and fast queries</li>
-            <li><i class="fas fa-check"></i> Role-based access control for multi-user team workflows</li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">Management Portal</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Task & Operations Management Web App</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Full-featured web application for managing operational tasks, with React frontend, Node.js/Express REST API, and MongoDB data store.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> React-powered SPA with dynamic dashboards for real-time task tracking</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> RESTful API built with Node.js and Express for scalable backend logic</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> MongoDB document store enabling flexible data modelling</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Role-based access control for multi-user team workflows</li>
           </ul>
-          <div class="project-tech">
-            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">React</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Node.js</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Express</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">MongoDB</span>
           </div>
         </div>
 
         <!-- Nexus -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon lab"><i class="fas fa-cubes"></i></div>
-            <div class="project-links-top">
-              <a href="https://github.com/Shakeelnasafian" target="_blank" class="project-ext-link" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
+        <div class="fade-up project-card glass rounded-2xl p-7 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 grid place-items-center rounded-2xl text-white text-xl pi-lab"><i class="fas fa-cubes"></i></div>
+            <a href="https://github.com/Shakeelnasafian" target="_blank" class="w-9 h-9 grid place-items-center rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent transition"><i class="fab fa-github"></i></a>
           </div>
-          <h3 class="project-title">Nexus</h3>
-          <p class="project-subtitle">Software Package Management & Deployment Tool</p>
-          <p class="project-desc">A powerful tool for managing and deploying software packages, built on a robust Java/Spring Boot backend with PostgreSQL for reliable relational data management.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Spring Boot microservice architecture for modular package lifecycle management</li>
-            <li><i class="fas fa-check"></i> PostgreSQL with optimized schemas for versioning, dependency resolution, and audit trails</li>
-            <li><i class="fas fa-check"></i> Automated deployment pipelines reducing manual release overhead</li>
-            <li><i class="fas fa-check"></i> REST API layer enabling seamless CI/CD tool integrations</li>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white mb-1">Nexus</h3>
+          <p class="text-sm text-brand-cyan font-medium mb-3">Software Package Management & Deployment</p>
+          <p class="text-[0.93rem] leading-7 text-slate-300 mb-4">Powerful tool for managing and deploying software packages, built on Java/Spring Boot with PostgreSQL for reliable data management.</p>
+          <ul class="flex flex-col gap-2 text-[0.88rem] text-slate-300 mb-5">
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Spring Boot microservice architecture for modular package lifecycle</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> PostgreSQL with optimized schemas for versioning and audit trails</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> Automated deployment pipelines reducing manual release overhead</li>
+            <li class="flex items-start gap-2.5"><i class="fas fa-check text-emerald-400 text-xs mt-1.5"></i> REST API layer enabling seamless CI/CD tool integrations</li>
           </ul>
-          <div class="project-tech">
-            <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>REST API</span>
-          </div>
-        </div>
-
-        <!-- Lab Operations System -->
-        <div class="project-card">
-          <div class="project-card-header">
-            <div class="project-icon bio"><i class="fas fa-vials"></i></div>
-            <div class="project-links-top">
-              <a href="https://github.com/Shakeelnasafian" target="_blank" class="project-ext-link" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">Laboratory Operations System</h3>
-          <p class="project-subtitle">Lab Data & Workflow Management</p>
-          <p class="project-desc">A Python-based system for managing laboratory operations and data, streamlining sample tracking, result recording, and reporting workflows.</p>
-          <ul class="project-highlights">
-            <li><i class="fas fa-check"></i> Flask REST API for lightweight, rapid lab data operations</li>
-            <li><i class="fas fa-check"></i> MySQL-backed data layer with normalized schemas for samples, tests, and results</li>
-            <li><i class="fas fa-check"></i> Automated report generation reducing manual documentation effort</li>
-            <li><i class="fas fa-check"></i> Role-based access for lab staff, technicians, and administrators</li>
-          </ul>
-          <div class="project-tech">
-            <span>Python</span><span>Flask</span><span>MySQL</span><span>REST API</span>
+          <div class="flex flex-wrap gap-1.5 mt-auto pt-4 border-t border-white/10">
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Java</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">Spring Boot</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">PostgreSQL</span>
+            <span class="font-mono text-[0.72rem] px-2.5 py-1 rounded-md bg-cyan-400/10 text-cyan-200 border border-cyan-400/20">REST API</span>
           </div>
         </div>
 
@@ -638,211 +848,224 @@
   </section>
 
   <!-- ── MORE PROJECTS ── -->
-  <section class="section-light" id="more-projects">
-    <div class="container-portfolio">
-      <h2 class="section-title">
-        <span class="section-title-number">04</span> More Projects
+  <section id="more-projects" class="relative py-24 md:py-32 bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800">
+    <div class="container max-w-[1200px] mx-auto px-7">
+      <h2 class="flex items-center gap-4 font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] tracking-[-0.02em] mb-16 text-slate-900">
+        <span class="font-mono text-[0.55em] font-medium px-3 py-1.5 rounded-full text-brand-cyan bg-cyan-400/10 border border-cyan-400/25 tracking-widest uppercase">04</span>
+        More Projects
       </h2>
-      <div class="more-projects-grid">
 
-        <div class="more-card">
-          <h4><i class="fas fa-heartbeat"></i> Healthcare & Genomics</h4>
-          <ul>
-            <li><a href="https://agiomix.com/" target="_blank">Agiomix</a></li>
-            <li><a href="https://dashboard.agiomix.com/" target="_blank">Agiomix Dashboard</a></li>
-            <li><a href="https://reporting.agiomix.com/auth/login" target="_blank">Agiomix Reporting</a></li>
-            <li><a href="https://livewellgx.com/" target="_blank">Livewellgx</a></li>
-            <li><a href="https://counselomix.com/" target="_blank">Counselomix</a></li>
-            <li><a href="https://niptunegx.com/" target="_blank">Niptunegx</a></li>
-            <li><a href="https://canactgx.com/" target="_blank">Canactgx</a></li>
-            <li><a href="https://pgtunegx.com/" target="_blank">Pgtunegx</a></li>
-            <li><a href="https://neuroaffectivetouch.com/" target="_blank">Neuroaffectivetouch</a></li>
-            <li><a href="https://phcx.health/" target="_blank">Phcx.health</a></li>
-            <li><a href="https://estore.phcx.health/" target="_blank">Estore.phcx.health</a></li>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Healthcare -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(15,17,35,.15)] hover:border-violet-500/25 transition">
+          <h4 class="flex items-center gap-2.5 font-display font-semibold text-base text-slate-900 mb-4 pb-3.5 border-b border-dashed border-slate-200">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-sm"><i class="fas fa-heartbeat"></i></span>
+            Healthcare & Genomics
+          </h4>
+          <ul class="flex flex-col gap-1">
+            <li><a href="https://agiomix.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Agiomix</a></li>
+            <li><a href="https://dashboard.agiomix.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Agiomix Dashboard</a></li>
+            <li><a href="https://reporting.agiomix.com/auth/login" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Agiomix Reporting</a></li>
+            <li><a href="https://livewellgx.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Livewellgx</a></li>
+            <li><a href="https://counselomix.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Counselomix</a></li>
+            <li><a href="https://niptunegx.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Niptunegx</a></li>
+            <li><a href="https://canactgx.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Canactgx</a></li>
+            <li><a href="https://pgtunegx.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Pgtunegx</a></li>
+            <li><a href="https://neuroaffectivetouch.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Neuroaffectivetouch</a></li>
+            <li><a href="https://phcx.health/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Phcx.health</a></li>
+            <li><a href="https://estore.phcx.health/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Estore.phcx.health</a></li>
           </ul>
         </div>
 
-        <div class="more-card">
-          <h4><i class="fas fa-newspaper"></i> Press Release & Media</h4>
-          <ul>
-            <li><a href="https://nexisnewswire.lexisnexis.com/auth/login" target="_blank">Nexis Newswire (LexisNexis)</a></li>
-            <li><a href="https://account.icrowdnewswire.com/auth/login" target="_blank">iCrowd Dashboard</a></li>
-            <li><a href="https://www.law.com/legalnewswire/" target="_blank">Legal Newswire (Law.com)</a></li>
-            <li><a href="https://icrowdnewswire.com/report/?id=2692692" target="_blank">iCrowd Reporting</a></li>
-            <li><a href="https://pressrelease.icrowdnewswire.com/" target="_blank">Press Release Portal</a></li>
-            <li><a href="https://management.icrowdnewswire.com/users/login" target="_blank">Management Dashboard</a></li>
-            <li><a href="https://editorial.icrowdnewswire.com/users/login" target="_blank">Editorial System</a></li>
-            <li><a href="https://www.icrowdde.com/" target="_blank">iCrowdDE (8 languages)</a></li>
+        <!-- Press -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(15,17,35,.15)] hover:border-violet-500/25 transition">
+          <h4 class="flex items-center gap-2.5 font-display font-semibold text-base text-slate-900 mb-4 pb-3.5 border-b border-dashed border-slate-200">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-sm"><i class="fas fa-newspaper"></i></span>
+            Press Release & Media
+          </h4>
+          <ul class="flex flex-col gap-1">
+            <li><a href="https://nexisnewswire.lexisnexis.com/auth/login" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Nexis Newswire (LexisNexis)</a></li>
+            <li><a href="https://account.icrowdnewswire.com/auth/login" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">iCrowd Dashboard</a></li>
+            <li><a href="https://www.law.com/legalnewswire/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Legal Newswire (Law.com)</a></li>
+            <li><a href="https://icrowdnewswire.com/report/?id=2692692" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">iCrowd Reporting</a></li>
+            <li><a href="https://pressrelease.icrowdnewswire.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Press Release Portal</a></li>
+            <li><a href="https://management.icrowdnewswire.com/users/login" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Management Dashboard</a></li>
+            <li><a href="https://editorial.icrowdnewswire.com/users/login" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Editorial System</a></li>
+            <li><a href="https://www.icrowdde.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">iCrowdDE (8 languages)</a></li>
           </ul>
         </div>
 
-        <div class="more-card">
-          <h4><i class="fas fa-chart-line"></i> Marketing Platforms</h4>
-          <ul>
-            <li><a href="https://icrowdmarketing.com/" target="_blank">iCrowdMarketing</a></li>
-            <li><a href="https://icrowdresearch.com/" target="_blank">iCrowdResearch</a></li>
-            <li><a href="https://reportedtimes.com/" target="_blank">Reported Times</a></li>
-            <li><a href="https://canadatousd.com/" target="_blank">CanadaToUSD</a></li>
-            <li><a href="https://szadil.com/" target="_blank">Szadil</a></li>
-            <li><a href="https://masdareor.com/" target="_blank">Masdareor</a></li>
+        <!-- Marketing -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(15,17,35,.15)] hover:border-violet-500/25 transition">
+          <h4 class="flex items-center gap-2.5 font-display font-semibold text-base text-slate-900 mb-4 pb-3.5 border-b border-dashed border-slate-200">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-sm"><i class="fas fa-chart-line"></i></span>
+            Marketing Platforms
+          </h4>
+          <ul class="flex flex-col gap-1">
+            <li><a href="https://icrowdmarketing.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">iCrowdMarketing</a></li>
+            <li><a href="https://icrowdresearch.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">iCrowdResearch</a></li>
+            <li><a href="https://reportedtimes.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Reported Times</a></li>
+            <li><a href="https://canadatousd.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">CanadaToUSD</a></li>
+            <li><a href="https://szadil.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Szadil</a></li>
+            <li><a href="https://masdareor.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Masdareor</a></li>
           </ul>
         </div>
 
-        <div class="more-card">
-          <h4><i class="fas fa-store"></i> Business & E-commerce</h4>
-          <ul>
-            <li><a href="https://heymuse.com/" target="_blank">Heymuse</a></li>
-            <li><a href="https://tplabs.ae/" target="_blank">TPLabs</a></li>
-            <li><a href="https://www.thinkculinary.com/" target="_blank">ThinkCulinary</a></li>
-            <li><a href="https://www.prestonestateplanning.com/" target="_blank">Preston Estate Planning</a></li>
-            <li><a href="https://www.agbl.net/" target="_blank">AGBL</a></li>
-            <li><a href="https://timepiece360.com/" target="_blank">Timepiece360</a></li>
-            <li><a href="https://avcna.net/" target="_blank">Avcna</a></li>
-            <li><a href="https://creditlift.ca/" target="_blank">Creditlift</a></li>
-            <li><a href="https://primedocbilling.com/" target="_blank">PrimedocBilling</a></li>
+        <!-- Business -->
+        <div class="fade-up p-7 rounded-2xl bg-white border border-slate-200 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(15,17,35,.15)] hover:border-violet-500/25 transition">
+          <h4 class="flex items-center gap-2.5 font-display font-semibold text-base text-slate-900 mb-4 pb-3.5 border-b border-dashed border-slate-200">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-sm"><i class="fas fa-store"></i></span>
+            Business & E-commerce
+          </h4>
+          <ul class="flex flex-col gap-1">
+            <li><a href="https://heymuse.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Heymuse</a></li>
+            <li><a href="https://tplabs.ae/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">TPLabs</a></li>
+            <li><a href="https://www.thinkculinary.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">ThinkCulinary</a></li>
+            <li><a href="https://www.prestonestateplanning.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Preston Estate Planning</a></li>
+            <li><a href="https://www.agbl.net/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">AGBL</a></li>
+            <li><a href="https://timepiece360.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Timepiece360</a></li>
+            <li><a href="https://avcna.net/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Avcna</a></li>
+            <li><a href="https://creditlift.ca/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">Creditlift</a></li>
+            <li><a href="https://primedocbilling.com/" target="_blank" class="block px-2.5 py-1.5 rounded-lg text-sm text-slate-600 hover:bg-violet-500/[.07] hover:text-brand-violet hover:pl-4 transition-all">PrimedocBilling</a></li>
           </ul>
         </div>
 
-        <div class="more-card open-source">
-          <h4><i class="fab fa-github"></i> Open Source Projects</h4>
-          <ul class="os-list">
-            <li>
-              <a href="https://github.com/Shakeelnasafian/laravel-permissions-ui" target="_blank">
-                <strong>Laravel Permissions UI</strong>
+        <!-- Open Source — span 2 cols -->
+        <div class="fade-up sm:col-span-2 p-7 rounded-2xl bg-white border border-slate-200 border-l-[3px] border-l-brand-violet hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(15,17,35,.15)] transition">
+          <h4 class="flex items-center gap-2.5 font-display font-semibold text-base text-slate-900 mb-4 pb-3.5 border-b border-dashed border-slate-200">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-sm"><i class="fab fa-github"></i></span>
+            Open Source Projects
+          </h4>
+          <ul class="grid sm:grid-cols-2 gap-2">
+            <li class="p-3 rounded-xl bg-violet-500/[.04] border border-violet-500/[.12] hover:bg-violet-500/[.08] hover:translate-x-1 transition-all">
+              <a href="https://github.com/Shakeelnasafian/laravel-permissions-ui" target="_blank" class="block">
+                <strong class="text-slate-900 group-hover:text-brand-violet">Laravel Permissions UI</strong>
+                <span class="block text-[0.78rem] text-slate-500">Blade/Alpine.js admin UI for Spatie permissions</span>
               </a>
-              <span class="os-desc">Blade/Alpine.js admin UI for Spatie permissions</span>
             </li>
-            <li>
-              <a href="https://github.com/Shakeelnasafian/Smart-Grocery-Tracker" target="_blank">
-                <strong>Smart Grocery Tracker</strong>
+            <li class="p-3 rounded-xl bg-violet-500/[.04] border border-violet-500/[.12] hover:bg-violet-500/[.08] hover:translate-x-1 transition-all">
+              <a href="https://github.com/Shakeelnasafian/Smart-Grocery-Tracker" target="_blank" class="block">
+                <strong class="text-slate-900">Smart Grocery Tracker</strong>
+                <span class="block text-[0.78rem] text-slate-500">FastAPI + Vue 3 inventory & expiry tracking app</span>
               </a>
-              <span class="os-desc">FastAPI + Vue 3 inventory & expiry tracking app</span>
             </li>
-            <li>
-              <a href="https://github.com/Shakeelnasafian/wp-netsuite-forms" target="_blank">
-                <strong>WP NetSuite Forms</strong>
+            <li class="p-3 rounded-xl bg-violet-500/[.04] border border-violet-500/[.12] hover:bg-violet-500/[.08] hover:translate-x-1 transition-all">
+              <a href="https://github.com/Shakeelnasafian/wp-netsuite-forms" target="_blank" class="block">
+                <strong class="text-slate-900">WP NetSuite Forms</strong>
+                <span class="block text-[0.78rem] text-slate-500">WordPress plugin for NetSuite form integration</span>
               </a>
-              <span class="os-desc">WordPress plugin for NetSuite form integration</span>
             </li>
-            <li>
-              <a href="https://github.com/Shakeelnasafian/Kids-Game" target="_blank">
-                <strong>Kids Game</strong>
+            <li class="p-3 rounded-xl bg-violet-500/[.04] border border-violet-500/[.12] hover:bg-violet-500/[.08] hover:translate-x-1 transition-all">
+              <a href="https://github.com/Shakeelnasafian/Kids-Game" target="_blank" class="block">
+                <strong class="text-slate-900">Kids Game</strong>
+                <span class="block text-[0.78rem] text-slate-500">Educational React/TypeScript game powered by Google Gemini AI</span>
               </a>
-              <span class="os-desc">Educational React/TypeScript game powered by Google Gemini AI</span>
             </li>
           </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── EDUCATION, CERTS, LANGUAGES ── -->
-  <section class="section-dark" id="education">
-    <div class="container-portfolio">
-      <h2 class="section-title light">
-        <span class="section-title-number">05</span> Education & Credentials
+  <!-- ── EDUCATION & CREDENTIALS ── -->
+  <section id="education" class="relative py-24 md:py-32 ambient-glow bg-ink-0">
+    <div class="container max-w-[1200px] mx-auto px-7 relative z-10">
+      <h2 class="flex items-center gap-4 font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] tracking-[-0.02em] mb-16 text-white">
+        <span class="font-mono text-[0.55em] font-medium px-3 py-1.5 rounded-full text-brand-violet bg-violet-500/10 border border-violet-500/25 tracking-widest uppercase">05</span>
+        Education & Credentials
       </h2>
-      <div class="creds-grid">
 
-        <div class="cred-card">
-          <div class="cred-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div class="cred-content">
-            <h4>BS Software Engineering</h4>
-            <p class="cred-org">University of Malakand, KPK</p>
-            <p class="cred-period">Aug 2014 – Aug 2018 · CGPA: 3.31/4.0</p>
-            <p class="cred-detail">Computer Science, Data Structures, AI, HCI, System Design</p>
+      <div class="grid sm:grid-cols-2 gap-5">
+
+        <!-- Education -->
+        <div class="fade-up grid grid-cols-[64px_1fr] gap-4 p-7 rounded-2xl glass">
+          <div class="w-16 h-16 grid place-items-center rounded-2xl bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-xl shadow-[0_10px_26px_-10px_rgba(124,92,255,.55)]"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <h4 class="font-display font-semibold text-base text-white mb-1">BS Software Engineering</h4>
+            <p class="text-sm text-brand-cyan font-medium mb-1">University of Malakand, KPK</p>
+            <p class="font-mono text-xs text-slate-500 mb-2.5">Aug 2014 – Aug 2018 · CGPA: 3.31/4.0</p>
+            <p class="text-sm text-slate-300">Computer Science, Data Structures, AI, HCI, System Design</p>
           </div>
         </div>
 
-        <div class="cred-card">
-          <div class="cred-icon"><i class="fab fa-google"></i></div>
-          <div class="cred-content">
-            <h4>Google Project Management</h4>
-            <p class="cred-org">Google · Coursera</p>
-            <ul class="cred-list">
-              <li>
-                <i class="fas fa-check-circle"></i>
-                <span>
-                  <a href="https://coursera.org/verify/A37L799Z94J8" target="_blank" class="cert-link">
-                    Foundations of Project Management
-                  </a>
-                  <span class="cert-date">Sep 2025</span>
-                </span>
+        <!-- Google PM -->
+        <div class="fade-up grid grid-cols-[64px_1fr] gap-4 p-7 rounded-2xl glass">
+          <div class="w-16 h-16 grid place-items-center rounded-2xl bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-xl shadow-[0_10px_26px_-10px_rgba(124,92,255,.55)]"><i class="fab fa-google"></i></div>
+          <div>
+            <h4 class="font-display font-semibold text-base text-white mb-1">Google Project Management</h4>
+            <p class="text-sm text-brand-cyan font-medium mb-2.5">Google · Coursera</p>
+            <ul class="flex flex-col gap-1.5 text-sm text-slate-300 leading-tight">
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span><a href="https://coursera.org/verify/A37L799Z94J8" target="_blank" class="text-white border-b border-dashed border-cyan-400/35 hover:text-brand-cyan transition">Foundations of Project Management</a><span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">Sep 2025</span></span>
               </li>
-              <li>
-                <i class="fas fa-check-circle"></i>
-                <span>
-                  <a href="https://coursera.org/verify/U7T8HL8XLV7D" target="_blank" class="cert-link">
-                    Project Initiation: Starting a Successful Project
-                  </a>
-                  <span class="cert-date">Sep 2025</span>
-                </span>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span><a href="https://coursera.org/verify/U7T8HL8XLV7D" target="_blank" class="text-white border-b border-dashed border-cyan-400/35 hover:text-brand-cyan transition">Project Initiation: Starting a Successful Project</a><span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">Sep 2025</span></span>
               </li>
-              <li>
-                <i class="fas fa-check-circle"></i>
-                <span>
-                  <a href="https://coursera.org/verify/EW2ADPRSZWBU" target="_blank" class="cert-link">
-                    Project Planning: Putting It All Together
-                  </a>
-                  <span class="cert-date">Dec 2025</span>
-                </span>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span><a href="https://coursera.org/verify/EW2ADPRSZWBU" target="_blank" class="text-white border-b border-dashed border-cyan-400/35 hover:text-brand-cyan transition">Project Planning: Putting It All Together</a><span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">Dec 2025</span></span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="cred-card">
-          <div class="cred-icon"><i class="fas fa-certificate"></i></div>
-          <div class="cred-content">
-            <h4>Technical Certifications</h4>
-            <p class="cred-org">Udemy</p>
-            <ul class="cred-list">
-              <li>
-                <i class="fas fa-check-circle"></i>
-                <span>
-                  <a href="https://ude.my/UC-446efe37-90f1-4a82-85da-2f5a06a90e12" target="_blank" class="cert-link">Let's Learn Laravel &amp; Livewire: A Guided Path For Beginners</a>
-                  <span class="cert-date">Dec 2025</span>
-                </span>
+        <!-- Technical Certifications -->
+        <div class="fade-up grid grid-cols-[64px_1fr] gap-4 p-7 rounded-2xl glass">
+          <div class="w-16 h-16 grid place-items-center rounded-2xl bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-xl shadow-[0_10px_26px_-10px_rgba(124,92,255,.55)]"><i class="fas fa-certificate"></i></div>
+          <div>
+            <h4 class="font-display font-semibold text-base text-white mb-1">Technical Certifications</h4>
+            <p class="text-sm text-brand-cyan font-medium mb-2.5">Udemy</p>
+            <ul class="flex flex-col gap-1.5 text-sm text-slate-300">
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span><a href="https://ude.my/UC-446efe37-90f1-4a82-85da-2f5a06a90e12" target="_blank" class="text-white border-b border-dashed border-cyan-400/35 hover:text-brand-cyan transition">Let's Learn Laravel & Livewire</a><span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">Dec 2025</span></span>
               </li>
-              <li>
-                <i class="fas fa-check-circle"></i>
-                <span>
-                  <a href="https://ude.my/UC-e998ec1e-1695-42bf-a280-98aa8ecf84c8" target="_blank" class="cert-link">Learn JavaScript: Full-Stack from Scratch</a>
-                  <span class="cert-date">Dec 2025</span>
-                </span>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span><a href="https://ude.my/UC-e998ec1e-1695-42bf-a280-98aa8ecf84c8" target="_blank" class="text-white border-b border-dashed border-cyan-400/35 hover:text-brand-cyan transition">Learn JavaScript: Full-Stack from Scratch</a><span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">Dec 2025</span></span>
               </li>
-              <li><i class="fas fa-check-circle"></i> <span>PHP with Laravel — Become a Master <span class="cert-date">2023</span></span></li>
-              <li><i class="fas fa-check-circle"></i> <span>Advanced PHP Programming <span class="cert-date">2021–2022</span></span></li>
-              <li><i class="fas fa-check-circle"></i> <span>WordPress Developer: Unlocking Power with Code <span class="cert-date">2019</span></span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i><span>PHP with Laravel — Become a Master <span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">2023</span></span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i><span>Advanced PHP Programming <span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">2021–2022</span></span></li>
+              <li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 text-xs mt-1.5 flex-shrink-0"></i><span>WordPress Developer: Unlocking Power with Code <span class="ml-2 font-mono text-[0.7rem] text-slate-500 px-1.5 py-px rounded bg-white/5">2019</span></span></li>
             </ul>
           </div>
         </div>
 
-        <div class="cred-card">
-          <div class="cred-icon"><i class="fas fa-language"></i></div>
-          <div class="cred-content">
-            <h4>Languages</h4>
-            <div class="lang-list">
-              <div class="lang-item"><span>English</span><span class="lang-level professional">Professional</span></div>
-              <div class="lang-item"><span>Urdu</span><span class="lang-level native">Native</span></div>
-              <div class="lang-item"><span>Pashto</span><span class="lang-level fluent">Fluent</span></div>
-              <div class="lang-item"><span>Hindi</span><span class="lang-level conversational">Conversational</span></div>
+        <!-- Languages -->
+        <div class="fade-up grid grid-cols-[64px_1fr] gap-4 p-7 rounded-2xl glass">
+          <div class="w-16 h-16 grid place-items-center rounded-2xl bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-xl shadow-[0_10px_26px_-10px_rgba(124,92,255,.55)]"><i class="fas fa-language"></i></div>
+          <div>
+            <h4 class="font-display font-semibold text-base text-white mb-2.5">Languages</h4>
+            <div class="flex flex-col gap-2">
+              <div class="flex justify-between items-center px-3 py-2 rounded-xl bg-white/[.03] border border-white/[.08] text-sm text-slate-300">
+                <span>English</span>
+                <span class="font-mono text-[0.7rem] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-400/15 text-brand-cyan">Professional</span>
+              </div>
+              <div class="flex justify-between items-center px-3 py-2 rounded-xl bg-white/[.03] border border-white/[.08] text-sm text-slate-300">
+                <span>Urdu</span>
+                <span class="font-mono text-[0.7rem] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-400/15 text-emerald-400">Native</span>
+              </div>
+              <div class="flex justify-between items-center px-3 py-2 rounded-xl bg-white/[.03] border border-white/[.08] text-sm text-slate-300">
+                <span>Pashto</span>
+                <span class="font-mono text-[0.7rem] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-violet-400/15 text-violet-400">Fluent</span>
+              </div>
+              <div class="flex justify-between items-center px-3 py-2 rounded-xl bg-white/[.03] border border-white/[.08] text-sm text-slate-300">
+                <span>Hindi</span>
+                <span class="font-mono text-[0.7rem] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-pink-400/15 text-brand-pink">Conversational</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="cred-card">
-          <div class="cred-icon"><i class="fas fa-users"></i></div>
-          <div class="cred-content">
-            <h4>Soft Skills</h4>
-            <div class="soft-skills">
-              <span>Team Leadership</span>
-              <span>Project Management</span>
-              <span>Agile / Scrum</span>
-              <span>Architecture Planning</span>
-              <span>Problem-Solving</span>
-              <span>Cross-Team Collaboration</span>
+        <!-- Soft skills (full width) -->
+        <div class="fade-up sm:col-span-2 grid grid-cols-[64px_1fr] gap-4 p-7 rounded-2xl glass">
+          <div class="w-16 h-16 grid place-items-center rounded-2xl bg-gradient-to-br from-brand-violet to-brand-cyan text-white text-xl shadow-[0_10px_26px_-10px_rgba(124,92,255,.55)]"><i class="fas fa-users"></i></div>
+          <div>
+            <h4 class="font-display font-semibold text-base text-white mb-2.5">Soft Skills</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 text-[0.78rem] font-medium rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/25">Team Leadership</span>
+              <span class="px-3 py-1.5 text-[0.78rem] font-medium rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/25">Project Management</span>
+              <span class="px-3 py-1.5 text-[0.78rem] font-medium rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/25">Agile / Scrum</span>
+              <span class="px-3 py-1.5 text-[0.78rem] font-medium rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/25">Architecture Planning</span>
+              <span class="px-3 py-1.5 text-[0.78rem] font-medium rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/25">Problem-Solving</span>
+              <span class="px-3 py-1.5 text-[0.78rem] font-medium rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/25">Cross-Team Collaboration</span>
             </div>
           </div>
         </div>
@@ -852,21 +1075,22 @@
   </section>
 
   <!-- ── FOOTER ── -->
-  <footer class="site-footer">
-    <div class="container-portfolio">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-name">Shakeel Ahmad</span>
-          <span class="footer-role">Full Stack Developer · Dubai, UAE</span>
+  <footer class="relative py-14 bg-ink-1 border-t border-white/[.08] overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-px bg-[linear-gradient(90deg,transparent,#7c5cff,#38bdf8,#f472b6,transparent)]"></div>
+    <div class="container max-w-[1200px] mx-auto px-7">
+      <div class="flex flex-wrap justify-between items-center gap-6 mb-7">
+        <div class="flex flex-col gap-1">
+          <span class="font-display font-bold text-lg text-grad-vc">Shakeel Ahmad</span>
+          <span class="text-sm text-slate-500">Lead Full Stack Developer · Dubai, UAE</span>
         </div>
-        <div class="footer-links">
-          <a href="mailto:shakeelnasafian@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+971508416653"><i class="fas fa-phone"></i></a>
-          <a href="https://www.linkedin.com/in/shakeel-ahmad-sw-engineer/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/Shakeelnasafian" target="_blank"><i class="fab fa-github"></i></a>
+        <div class="flex gap-2.5">
+          <a href="mailto:shakeelnasafian@gmail.com" class="w-11 h-11 grid place-items-center rounded-xl bg-white/[.04] border border-white/[.08] text-slate-300 text-base hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent hover:-translate-y-0.5 transition"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+971508416653" class="w-11 h-11 grid place-items-center rounded-xl bg-white/[.04] border border-white/[.08] text-slate-300 text-base hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent hover:-translate-y-0.5 transition"><i class="fas fa-phone"></i></a>
+          <a href="https://www.linkedin.com/in/shakeel-ahmad-sw-engineer/" target="_blank" class="w-11 h-11 grid place-items-center rounded-xl bg-white/[.04] border border-white/[.08] text-slate-300 text-base hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent hover:-translate-y-0.5 transition"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Shakeelnasafian" target="_blank" class="w-11 h-11 grid place-items-center rounded-xl bg-white/[.04] border border-white/[.08] text-slate-300 text-base hover:bg-gradient-to-br hover:from-brand-violet hover:to-brand-cyan hover:text-white hover:border-transparent hover:-translate-y-0.5 transition"><i class="fab fa-github"></i></a>
         </div>
       </div>
-      <p class="footer-copy">&copy; 2025 Shakeel Ahmad. Built with care.</p>
+      <p class="text-center text-xs text-slate-500 pt-6 border-t border-white/[.08]">© 2026 Shakeel Ahmad. Built with care.</p>
     </div>
   </footer>
 
@@ -874,25 +1098,24 @@
     // Sticky nav shadow on scroll
     const nav = document.getElementById('topnav');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      if (window.scrollY > 60) {
+        nav.classList.add('!bg-[rgba(10,10,18,0.78)]', 'shadow-[0_10px_40px_-10px_rgba(0,0,0,.6)]');
+      } else {
+        nav.classList.remove('!bg-[rgba(10,10,18,0.78)]', 'shadow-[0_10px_40px_-10px_rgba(0,0,0,.6)]');
+      }
     });
 
     // Intersection observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
+      entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          e.target.classList.add('visible');
+          setTimeout(() => e.target.classList.add('visible'), i * 50);
           observer.unobserve(e.target);
         }
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll(
-      '.timeline-item, .skill-card, .project-card, .more-card, .cred-card, .summary-card'
-    ).forEach(el => {
-      el.classList.add('fade-up');
-      observer.observe(el);
-    });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 
 </body>
